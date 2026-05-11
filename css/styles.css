@@ -169,7 +169,7 @@
         #header.solid .h-cta:hover { background:var(--amber-lt); }
 
         .ham { display:none; flex-direction:column; gap:5px; cursor:pointer; padding:8px; }
-        .ham span { display:block; width:24px; height:2px; background:var(--white); border-radius:2px; transition:all .3s; }
+        .ham span { display:block; width:24px; height:2px; background:var(--navy); border-radius:2px; transition:all .3s; }
         #header.solid .ham span { background:var(--navy); }
 
         /* =========================================================
@@ -858,7 +858,7 @@
             .svc-card { height:300px; }
 
             /* CTA — hide image panel on tablets */
-            #cta { grid-template-columns:1fr; }
+            #cta { grid-template-columns:1fr; scroll-margin-top:70px; }
             .cta-right { display:none; }
 
             /* Testimonials */
@@ -906,14 +906,14 @@
         ========================================================= */
         @media(max-width:700px) {
             /* Header */
-            #header { padding:0 20px; top:36px; }
+            #header { padding:0 20px; top:0; }
             #header.solid { top:0; }
             nav, .h-cta { display:none; }
             .ham { display:flex; }
             #mob-nav { display:block; }
 
-            /* Top bar */
-            .top-bar-inner { padding:0 20px; gap:16px; justify-content:center; }
+            /* Top bar — hidden on mobile */
+            .top-bar { display:none; }
             .top-link { font-size:11.5px; }
             .top-link:not(:first-child).top-link { display:none; }
 
@@ -988,9 +988,6 @@
            RESPONSIVE — 480px (small mobile)
         ========================================================= */
         @media(max-width:480px) {
-            /* Top bar — hide social links on tiny screens */
-            .top-divider { display:none; }
-            .top-link:not(:first-child) { display:none; }
             #header { top:0; }
             .hero-ribbon-inner { grid-template-columns:repeat(3,1fr); }
             .h-stat { padding:10px 4px; }
