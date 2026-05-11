@@ -6,4 +6,4 @@ excerpt: Testing if creating a new blog works
 ---
 ***This is a test***\
 \
-How does **it** *look? ~~Bad~~ No. It looks **Good!***
+*How does **it** *look? ~~Bad~~ No. It looks **Good!****
