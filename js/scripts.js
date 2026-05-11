@@ -557,6 +557,23 @@ document.querySelectorAll(".fade-up").forEach(function(el) {
     }, 5000);
 })();
 
+/* ── IMAGE OPTIMISATION HELPER ──────────────────────── */
+/* Wraps an image URL through Vercel's image optimisation endpoint.
+   Falls back gracefully if running locally (no /_vercel/image available). */
+function jbmOptImg(url, width, quality) {
+    if (!url) return "";
+    /* External URLs not on our site — return as-is */
+    if (url.startsWith("http") && url.indexOf(window.location.hostname) === -1) return url;
+    /* Local dev — Vercel optimisation only works in production */
+    var isProduction = window.location.hostname.indexOf("vercel.app") !== -1
+                    || window.location.hostname.indexOf("jbmelectrical") !== -1;
+    if (!isProduction) return url;
+
+    var w = width || 800;
+    var q = quality || 75;
+    return "/_vercel/image?url=" + encodeURIComponent(url) + "&w=" + w + "&q=" + q;
+}
+
 /* ── 9. FRONTMATTER PARSER (markdown handled by marked library) ── */
 function jbmParseFrontmatter(text) {
     var match = text.match(/^---\s*\n([\s\S]*?)\n---\s*\n?([\s\S]*)$/);
@@ -633,7 +650,7 @@ function jbmFormatDate(dateStr) {
 
         grid.innerHTML = filtered.map(function(item) {
             return "<div class='gal-item' data-title='" + escAttr(item.title) + "' data-cat='" + escAttr(item.category) + "' data-img='" + escAttr(item.image) + "'>" +
-                "<img class='gal-item-img' src='" + escAttr(item.image) + "' alt='" + escAttr(item.title) + "' onerror=\"this.style.background='var(--off-white)'\">" +
+                "<img class='gal-item-img' src='" + escAttr(jbmOptImg(item.image, 640, 75)) + "' alt='" + escAttr(item.title) + "' loading='lazy' onerror=\"this.style.background='var(--off-white)'\">" +
                 "<div class='gal-item-overlay'>" +
                 "<div class='gal-item-cat'>" + escHtml(item.category) + "</div>" +
                 "<div class='gal-item-title'>" + escHtml(item.title) + "</div>" +
@@ -665,7 +682,7 @@ function jbmFormatDate(dateStr) {
     var lbTitle  = document.getElementById("gal-lightbox-title");
 
     function openLightbox(src, title, cat) {
-        lbImg.src = src;
+        lbImg.src = jbmOptImg(src, 1600, 85);
         lbImg.alt = title;
         lbCat.textContent = cat;
         lbTitle.textContent = title;
@@ -723,7 +740,7 @@ function jbmFormatDate(dateStr) {
         grid.innerHTML = posts.map(function(p) {
             return "<a href='blog-post.html?post=" + encodeURIComponent(p.slug) + "' class='blog-card'>" +
                 "<div class='blog-card-img-wrap'>" +
-                "<img class='blog-card-img' src='" + escAttr(p.cover || "") + "' alt='" + escAttr(p.title) + "' onerror=\"this.style.background='var(--light-gray)'\">" +
+                "<img class='blog-card-img' src='" + escAttr(jbmOptImg(p.cover || "", 640, 75)) + "' alt='" + escAttr(p.title) + "' loading='lazy' onerror=\"this.style.background='var(--light-gray)'\">" +
                 "</div>" +
                 "<div class='blog-card-body'>" +
                 "<div class='blog-card-date'>" + jbmFormatDate(p.date) + "</div>" +
@@ -765,7 +782,7 @@ function jbmFormatDate(dateStr) {
             // Update hero
             document.title = (meta.title || "Article") + " | JBM Electrical Contractors";
             var heroBg = document.getElementById("post-hero-bg");
-            if (heroBg && meta.cover) heroBg.style.backgroundImage = "url('" + meta.cover + "')";
+            if (heroBg && meta.cover) heroBg.style.backgroundImage = "url('" + jbmOptImg(meta.cover, 1920, 80) + "')";
             document.getElementById("post-title").textContent     = meta.title || "Untitled";
             document.getElementById("post-crumb-title").textContent = meta.title || "Article";
             document.getElementById("post-date").textContent      = jbmFormatDate(meta.date);
