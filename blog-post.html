@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Article | JBM Electrical Contractors</title>
+    <link rel="icon" type="image/x-icon" href="assets/icons/favicon.ico">
+    <meta name="description" content="JBM Electrical Contractors blog article.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@300;400;500;600;700&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        .nav-active { color: var(--amber) !important; }
+
+        /* Post hero */
+        .post-hero {
+            min-height: 50vh; position: relative;
+            display: flex; align-items: flex-end; overflow: hidden;
+            background: var(--navy-deep);
+        }
+        .post-hero-bg {
+            position: absolute; inset: 0;
+            background-size: cover; background-position: center;
+        }
+        .post-hero-overlay {
+            position: absolute; inset: 0;
+            background: linear-gradient(180deg, rgba(0,42,80,.45) 0%, rgba(0,42,80,.92) 80%, var(--navy-deep) 100%);
+        }
+        .post-hero-inner {
+            position: relative; z-index: 2;
+            max-width: 800px; width: 100%; margin: 0 auto;
+            padding: 160px 40px 60px;
+        }
+        .post-breadcrumb {
+            display: flex; align-items: center; gap: 8px;
+            font-size: 11px; letter-spacing: .2em; text-transform: uppercase;
+            color: rgba(255,255,255,.3); margin-bottom: 20px; font-weight: 500;
+        }
+        .post-breadcrumb a { color: var(--amber); }
+        .post-breadcrumb span { color: rgba(255,255,255,.2); }
+        .post-date {
+            font-size: 11px; letter-spacing: .22em; text-transform: uppercase;
+            color: var(--amber); font-weight: 600; margin-bottom: 18px;
+        }
+        .post-title {
+            font-family: "Barlow Semi Condensed", sans-serif;
+            font-size: clamp(32px, 4.5vw, 52px);
+            font-weight: 700; line-height: 1.08;
+            color: var(--white); letter-spacing: -.01em; margin: 0;
+        }
+
+        /* Article */
+        #post-article {
+            padding: 72px 0 96px;
+            background: var(--white);
+        }
+        .post-content {
+            max-width: 720px; margin: 0 auto;
+            padding: 0 40px;
+            font-size: 16px; color: var(--text);
+            line-height: 1.85; font-weight: 300;
+        }
+        .post-content h2 {
+            font-family: "Barlow Semi Condensed", sans-serif;
+            font-size: 28px; font-weight: 600; color: var(--navy);
+            margin: 40px 0 16px; line-height: 1.2;
+        }
+        .post-content h3 {
+            font-family: "Barlow Semi Condensed", sans-serif;
+            font-size: 22px; font-weight: 600; color: var(--navy);
+            margin: 32px 0 12px;
+        }
+        .post-content p { margin-bottom: 18px; }
+        .post-content ul, .post-content ol {
+            margin: 0 0 22px 22px;
+            padding: 0;
+        }
+        .post-content li { margin-bottom: 8px; }
+        .post-content a {
+            color: var(--amber); text-decoration: underline;
+        }
+        .post-content strong { color: var(--navy); font-weight: 600; }
+        .post-content img {
+            max-width: 100%; height: auto;
+            margin: 30px 0;
+        }
+        .post-back {
+            display: inline-flex; align-items: center; gap: 8px;
+            margin-top: 56px;
+            font-size: 11.5px; letter-spacing: .14em;
+            text-transform: uppercase; color: var(--amber); font-weight: 600;
+        }
+        .post-back svg { width: 14px; height: 14px; stroke: currentColor; fill: none; stroke-width: 2; }
+        .post-loading {
+            max-width: 720px; margin: 0 auto;
+            padding: 0 40px; text-align: center;
+            color: var(--mid-gray); font-size: 14px;
+        }
+
+        @media(max-width:700px) {
+            .post-hero-inner { padding: 130px 20px 48px; }
+            .post-breadcrumb { display: none; }
+            .post-content { padding: 0 20px; }
+            #post-article { padding: 48px 0 64px; }
+        }
+    </style>
+</head>
+<body>
+
+
+<div class="top-bar">
+    <div class="top-bar-inner">
+        <a href="mailto:enquiries@jbmelectrical.com.au" class="top-link">
+            <svg viewBox="0 0 20 20"><path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/><path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/></svg>
+            enquiries@jbmelectrical.com.au
+        </a>
+        <div class="top-divider"></div>
+        <a href="https://facebook.com" target="_blank" class="top-link">
+            <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+            Facebook
+        </a>
+        <a href="https://instagram.com" target="_blank" class="top-link">
+            <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+            Instagram
+        </a>
+    </div>
+</div>
+
+
+<header id="header">
+    <div class="header-wrap">
+        <a href="index.html" class="logo">
+            <img id="logo-src" class="logo-color" src="assets/images/jbm-logo.svg" alt="JBM Electrical Contractors">
+        </a>
+        <nav>
+            <div class="nav-item"><a href="index.html" class="nav-link">Home</a></div>
+            <div class="nav-item"><a href="about.html" class="nav-link ">About</a></div>
+            <div class="nav-item">
+                <a href="domestic.html" class="nav-link">Domestic <svg class="chevron" viewBox="0 0 10 6"><path d="M1 1l4 4 4-4"/></svg></a>
+                <div class="dropdown">
+                    <a href="domestic.html#power-points-switches" class="dd-link">Power Points &amp; Switches</a>
+                    <a href="domestic.html#lighting-downlights" class="dd-link">Lighting &amp; Downlights</a>
+                    <a href="domestic.html#ceiling-exhaust-fans" class="dd-link">Ceiling &amp; Exhaust Fans</a>
+                    <a href="domestic.html#stove-oven-cooktop" class="dd-link">Stove, Oven &amp; Cooktop Installations</a>
+                    <a href="domestic.html#air-conditioning" class="dd-link">Air Conditioning</a>
+                    <a href="domestic.html#rangehood-installations" class="dd-link">Rangehood Installations</a>
+                    <a href="domestic.html#smart-home-automation" class="dd-link">Smart Home Automation</a>
+                    <a href="domestic.html#electrical-heating" class="dd-link">Electrical Heating</a>
+                    <a href="domestic.html#tv-wall-mounting" class="dd-link">TV &amp; Wall Mounting</a>
+                    <a href="domestic.html#data-tv-points" class="dd-link">Data &amp; TV Points</a>
+                    <a href="domestic.html#ev-charger" class="dd-link">EV Charger Supply &amp; Install</a>
+                    <a href="domestic.html#switchboard-upgrades" class="dd-link">Switchboard Upgrades</a>
+                    <a href="domestic.html#safety-switches" class="dd-link">Safety Switches &amp; Testing</a>
+                    <a href="domestic.html#appliance-repairs" class="dd-link">Appliance Repairs</a>
+                    <a href="domestic.html#tenancy-safety-checks" class="dd-link">Residential Tenancy Safety Checks</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <a href="commercial.html" class="nav-link">Commercial <svg class="chevron" viewBox="0 0 10 6"><path d="M1 1l4 4 4-4"/></svg></a>
+                <div class="dropdown">
+                    <a href="commercial.html#shop-fitouts" class="dd-link">Shop Fit-outs</a>
+                    <a href="commercial.html#tenant-improvements" class="dd-link">Tenant Improvements</a>
+                    <a href="commercial.html#medical-dental" class="dd-link">Medical &amp; Dental Centres</a>
+                    <a href="commercial.html#bakeries-hospitality" class="dd-link">Bakeries &amp; Hospitality</a>
+                    <a href="commercial.html#shopping-centre-maintenance" class="dd-link">Shopping Centre Maintenance</a>
+                    <a href="commercial.html#lighting-installations" class="dd-link">Lighting Installations</a>
+                    <a href="commercial.html#new-construction-wiring" class="dd-link">New Construction Wiring</a>
+                    <a href="commercial.html#emergency-exit-lighting" class="dd-link">Emergency &amp; Exit Lighting</a>
+                    <a href="commercial.html#ev-charger" class="dd-link">EV Charger Installations</a>
+                    <a href="commercial.html#fire-alarm" class="dd-link">Fire Alarm Installation &amp; Maintenance</a>
+                    <a href="commercial.html#network-data" class="dd-link">Network &amp; Data Solutions</a>
+                    <a href="commercial.html#lighting-design-energy" class="dd-link">Lighting Design &amp; Energy Upgrades</a>
+                    <a href="commercial.html#fault-finding" class="dd-link">Fault Finding &amp; Repairs</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <a href="industrial.html" class="nav-link">Industrial <svg class="chevron" viewBox="0 0 10 6"><path d="M1 1l4 4 4-4"/></svg></a>
+                <div class="dropdown">
+                    <a href="industrial.html#factory-maintenance" class="dd-link">Factory Maintenance &amp; Repairs</a>
+                    <a href="industrial.html#crane-pump-maintenance" class="dd-link">Crane &amp; Pump Maintenance</a>
+                    <a href="industrial.html#motor-control-centres" class="dd-link">Motor Control Centres</a>
+                    <a href="industrial.html#heavy-machinery-wiring" class="dd-link">Heavy Machinery Wiring</a>
+                    <a href="industrial.html#cable-ladder" class="dd-link">Cable &amp; Ladder Installations</a>
+                    <a href="industrial.html#high-bay-lighting" class="dd-link">High Bay Lighting</a>
+                    <a href="industrial.html#3-phase-power" class="dd-link">3 Phase Power Installations</a>
+                    <a href="industrial.html#new-machinery-cabling" class="dd-link">New Machinery Cabling</a>
+                    <a href="industrial.html#shed-office-power" class="dd-link">Shed &amp; Office Power</a>
+                    <a href="industrial.html#fault-finding" class="dd-link">Fault Finding &amp; Repairs</a>
+                    <a href="industrial.html#power-upgrades" class="dd-link">Power Upgrades &amp; Distributor Liaison</a>
+                    <a href="industrial.html#lighting-design-energy" class="dd-link">Lighting Design &amp; Energy Upgrades</a>
+                </div>
+            </div>
+            <div class="nav-item"><a href="gallery.html" class="nav-link">Gallery</a></div>
+            <div class="nav-item"><a href="index.html#testimonials" class="nav-link">Testimonials</a></div>
+            <div class="nav-item"><a href="blog.html" class="nav-link nav-active">Blog</a></div>
+        </nav>
+        <a href="index.html#enquiry" class="h-cta">Call Now</a>
+        <div class="ham" id="ham" onclick="toggleNav()"><span></span><span></span><span></span></div>
+    </div>
+</header>
+
+
+<div id="mob-nav">
+    <button class="mob-close" onclick="toggleNav()">&#215;</button>
+    <a href="index.html" class="mob-link">Home</a>
+    <a href="about.html" class="mob-link">About</a>
+    <a href="domestic.html" class="mob-link">Domestic Services</a>
+    <a href="commercial.html" class="mob-link">Commercial Services</a>
+    <a href="industrial.html" class="mob-link">Industrial Services</a>
+    <a href="gallery.html" class="mob-link">Gallery</a>
+    <a href="index.html#testimonials" class="mob-link">Testimonials</a>
+    <a href="blog.html" class="mob-link">Blog</a>
+</div>
+
+
+<section class="post-hero" id="post-hero">
+    <div class="post-hero-bg" id="post-hero-bg"></div>
+    <div class="post-hero-overlay"></div>
+    <div class="post-hero-inner">
+        <div class="post-breadcrumb">
+            <a href="index.html">Home</a>
+            <span>/</span>
+            <a href="blog.html">Blog</a>
+            <span>/</span>
+            <span id="post-crumb-title">Loading...</span>
+        </div>
+        <div class="post-date" id="post-date"></div>
+        <h1 class="post-title" id="post-title">Loading...</h1>
+    </div>
+</section>
+
+
+<section id="post-article">
+    <div class="post-content" id="post-content">
+        <div class="post-loading">Loading post...</div>
+    </div>
+    <div class="post-content" style="margin-top:0;">
+        <a href="blog.html" class="post-back">
+            <svg viewBox="0 0 24 24"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+            Back to Blog
+        </a>
+    </div>
+</section>
+
+
+<section id="cta">
+    <div class="cta-left">
+        <h2 class="cta-title">
+            Ready to Get<br>
+            <strong>Started?</strong>
+        </h2>
+        <p class="cta-sub">Get in touch with JBM today for a free, no-obligation quote. Fast response, honest pricing, and workmanship backed by 50 years of combined experience.</p>
+        <div class="cta-btns">
+            <a href="index.html#enquiry" class="btn-amber">Request a Free Quote</a>
+        </div>
+    </div>
+    <div class="cta-right">
+        <!-- TODO: Replace with real JBM team or job site photo -->
+        <img class="cta-img" src="assets/images/cta-bg.webp" alt="JBM Electrical team at work" onerror="this.style.display='none'">
+        <div class="cta-img-overlay"></div>
+    </div>
+</section>
+
+
+<footer id="contact">
+    <div class="foot-inner">
+        <div>
+            <img id="logo-footer" class="foot-logo" src="assets/images/jbm-logo.svg" alt="JBM Electrical Contractors">
+            <p class="foot-about">JBM Electrical is a fully licensed and insured electrical contractor based in Melbourne, Victoria, serving residential, commercial, industrial and rural clients with over 50 years of combined experience.</p>
+            <div class="foot-social">
+                <a href="https://facebook.com" target="_blank" class="soc-btn" title="Facebook">
+                    <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                </a>
+                <a href="https://instagram.com" target="_blank" class="soc-btn" title="Instagram">
+                    <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                </a>
+            </div>
+        </div>
+        <div>
+            <div class="foot-col-title">Quick Links</div>
+            <ul class="foot-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="domestic.html">Domestic Services</a></li>
+                <li><a href="commercial.html">Commercial Services</a></li>
+                <li><a href="industrial.html">Industrial Services</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="index.html#testimonials">Testimonials</a></li>
+                <li><a href="blog.html">Blog</a></li>
+            </ul>
+        </div>
+        <div>
+            <div class="foot-col-title">Our Services</div>
+            <ul class="foot-links">
+                <li><a href="domestic.html#lighting-downlights">Lighting &amp; Downlights</a></li>
+                <li><a href="domestic.html#switchboard-upgrades">Switchboard Upgrades</a></li>
+                <li><a href="domestic.html#ev-charger">EV Charger Installation</a></li>
+                <li><a href="domestic.html#smart-home-automation">Smart Home Automation</a></li>
+                <li><a href="industrial.html#factory-maintenance">Industrial Maintenance</a></li>
+                <li><a href="industrial.html#motor-control-centres">Motor Control Centers</a></li>
+                <li><a href="commercial.html#fire-alarm">Fire Alarm Systems</a></li>
+                <li><a href="commercial.html#emergency-exit-lighting">Emergency Lighting</a></li>
+                <li><a href="commercial.html#network-data">Data &amp; Network Solutions</a></li>
+            </ul>
+        </div>
+        <div>
+            <div class="foot-col-title">Get In Touch</div>
+            <div class="foot-contact-row">
+                <div class="foot-ico"><svg viewBox="0 0 20 20"><path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/><path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/></svg></div>
+                <div>
+                    <div class="foot-c-lbl">General Enquiries</div>
+                    <div class="foot-c-val"><a href="mailto:enquiries@jbmelectrical.com.au">enquiries@jbmelectrical.com.au</a></div>
+                </div>
+            </div>
+            <div class="foot-contact-row">
+                <div class="foot-ico"><svg viewBox="0 0 20 20"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/></svg></div>
+                <div>
+                    <div class="foot-c-lbl">Phone</div>
+                    <div class="foot-c-val"><a href="tel:04123123123">04123 123 123</a></div>
+                </div>
+            </div>
+            <div class="foot-contact-row">
+                <div class="foot-ico"><svg viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/></svg></div>
+                <div>
+                    <div class="foot-c-lbl">Location</div>
+                    <div class="foot-c-val">Based out of Point Cook, VIC</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="foot-bottom">
+        <div class="foot-copy">&copy; 2026 JBM Electrical Contractors PTY LTD. All rights reserved.</div>
+        <div class="foot-rec">Registered Electrical Contractor <span>REC: 26019</span> &mdash; Melbourne, Victoria</div>
+        <div class="foot-copy"><span>Designed by <a href="https://framelywebdesigns.com" target="_blank" rel="noopener noreferrer" style="color:#C8790A;text-decoration:none;">Framely</a></span></div>
+    </div>
+</footer>
+
+
+<script src="js/scripts.js"></script>
+
+</body>
+</html>
