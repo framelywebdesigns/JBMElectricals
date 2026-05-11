@@ -33,8 +33,8 @@ export default async function handler(req, res) {
             .filter(f => f.type === "file")
             .map(f => f.name.replace(/\.(json|md)$/, ""));
 
-        // Cache for 60 seconds (Vercel edge), allows quick updates after publish
-        res.setHeader("Cache-Control", "public, s-maxage=60, stale-while-revalidate=30");
+        // Cache for 5 minutes at the edge, 30 seconds stale-while-revalidate
+        res.setHeader("Cache-Control", "public, s-maxage=300, stale-while-revalidate=30");
         res.status(200).json({ files });
 
     } catch (err) {
