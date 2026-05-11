@@ -640,19 +640,28 @@ function jbmFormatDate(dateStr) {
 /* ── 10. GALLERY ────────────────────────────────────── */
 (function() {
     var grid = document.getElementById("gal-grid");
-    if (!grid || !window.JBM_GALLERY_FILES) return;
+    if (!grid) return;
 
     var items = [];
 
-    /* Load all gallery JSON files */
-    Promise.all(JBM_GALLERY_FILES.map(function(slug) {
-        return fetch("content/gallery/" + slug + ".json")
-            .then(function(r) { return r.ok ? r.json() : null; })
-            .catch(function() { return null; });
-    })).then(function(results) {
+    /* Step 1: get the list of files from the API, then load each one */
+    var fetchUrl = window.JBM_GALLERY_FETCH || null;
+    var filesPromise = fetchUrl
+        ? fetch(fetchUrl).then(function(r) { return r.json(); }).then(function(d) { return d.files || []; })
+        : Promise.resolve(window.JBM_GALLERY_FILES || []);
+
+    filesPromise.then(function(slugs) {
+        return Promise.all(slugs.map(function(slug) {
+            return fetch("content/gallery/" + slug + ".json")
+                .then(function(r) { return r.ok ? r.json() : null; })
+                .catch(function() { return null; });
+        }));
+    }).then(function(results) {
         items = results.filter(function(x) { return x !== null; });
-        // Sort by date descending
         items.sort(function(a, b) { return (b.date || "").localeCompare(a.date || ""); });
+        renderGallery("all");
+    }).catch(function() {
+        items = [];
         renderGallery("all");
     });
 
@@ -725,19 +734,26 @@ function jbmFormatDate(dateStr) {
 /* ── 11. BLOG LISTING ──────────────────────────────── */
 (function() {
     var grid = document.getElementById("blog-grid");
-    if (!grid || !window.JBM_BLOG_FILES) return;
+    if (!grid) return;
 
-    Promise.all(JBM_BLOG_FILES.map(function(slug) {
-        return fetch("content/blog/" + slug + ".md")
-            .then(function(r) { return r.ok ? r.text() : null; })
-            .then(function(text) {
-                if (!text) return null;
-                var parsed = jbmParseFrontmatter(text);
-                parsed.meta.slug = slug;
-                return parsed.meta;
-            })
-            .catch(function() { return null; });
-    })).then(function(posts) {
+    var fetchUrl = window.JBM_BLOG_FETCH || null;
+    var filesPromise = fetchUrl
+        ? fetch(fetchUrl).then(function(r) { return r.json(); }).then(function(d) { return d.files || []; })
+        : Promise.resolve(window.JBM_BLOG_FILES || []);
+
+    filesPromise.then(function(slugs) {
+        return Promise.all(slugs.map(function(slug) {
+            return fetch("content/blog/" + slug + ".md")
+                .then(function(r) { return r.ok ? r.text() : null; })
+                .then(function(text) {
+                    if (!text) return null;
+                    var parsed = jbmParseFrontmatter(text);
+                    parsed.meta.slug = slug;
+                    return parsed.meta;
+                })
+                .catch(function() { return null; });
+        }));
+    }).then(function(posts) {
         posts = posts.filter(function(x) { return x !== null; });
         posts.sort(function(a, b) { return (b.date || "").localeCompare(a.date || ""); });
 
