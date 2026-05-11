@@ -557,8 +557,7 @@ document.querySelectorAll(".fade-up").forEach(function(el) {
     }, 5000);
 })();
 
-/* ── 9. SIMPLE FRONTMATTER + MARKDOWN PARSER ─────────── */
-/* Lightweight parser — handles the basics needed for blog posts */
+/* ── 9. FRONTMATTER PARSER (markdown handled by marked library) ── */
 function jbmParseFrontmatter(text) {
     var match = text.match(/^---\s*\n([\s\S]*?)\n---\s*\n?([\s\S]*)$/);
     if (!match) return { meta: {}, body: text };
@@ -574,58 +573,13 @@ function jbmParseFrontmatter(text) {
 }
 
 function jbmMarkdownToHtml(md) {
-    var lines = md.split("\n");
-    var html = "";
-    var inList = false;
-    var listType = null;
-
-    function closeList() {
-        if (inList) { html += "</" + listType + ">"; inList = false; listType = null; }
+    /* marked is loaded from CDN in blog-post.html */
+    if (typeof marked !== "undefined") {
+        marked.setOptions({ gfm: true, breaks: false });
+        return marked.parse(md);
     }
-
-    for (var i = 0; i < lines.length; i++) {
-        var line = lines[i];
-        var trimmed = line.trim();
-
-        if (!trimmed) { closeList(); continue; }
-
-        // Headings
-        if (trimmed.startsWith("### ")) { closeList(); html += "<h3>" + jbmInline(trimmed.slice(4)) + "</h3>"; continue; }
-        if (trimmed.startsWith("## "))  { closeList(); html += "<h2>" + jbmInline(trimmed.slice(3)) + "</h2>"; continue; }
-        if (trimmed.startsWith("# "))   { closeList(); html += "<h2>" + jbmInline(trimmed.slice(2)) + "</h2>"; continue; }
-
-        // Unordered list
-        if (trimmed.match(/^[-*]\s+/)) {
-            if (!inList || listType !== "ul") { closeList(); html += "<ul>"; inList = true; listType = "ul"; }
-            html += "<li>" + jbmInline(trimmed.replace(/^[-*]\s+/, "")) + "</li>";
-            continue;
-        }
-
-        // Ordered list
-        if (trimmed.match(/^\d+\.\s+/)) {
-            if (!inList || listType !== "ol") { closeList(); html += "<ol>"; inList = true; listType = "ol"; }
-            html += "<li>" + jbmInline(trimmed.replace(/^\d+\.\s+/, "")) + "</li>";
-            continue;
-        }
-
-        // Paragraph
-        closeList();
-        html += "<p>" + jbmInline(trimmed) + "</p>";
-    }
-    closeList();
-    return html;
-}
-
-function jbmInline(text) {
-    // Escape HTML first
-    text = text.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
-    // Bold **text**
-    text = text.replace(/\*\*([^*]+)\*\*/g, "<strong>$1</strong>");
-    // Italic *text*
-    text = text.replace(/(^|[^*])\*([^*]+)\*(?!\*)/g, "$1<em>$2</em>");
-    // Links [text](url)
-    text = text.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2">$1</a>');
-    return text;
+    /* Fallback: return raw text in a paragraph */
+    return "<p>" + md.replace(/\n\n+/g, "</p><p>") + "</p>";
 }
 
 function jbmFormatDate(dateStr) {
