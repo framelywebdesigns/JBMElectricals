@@ -127,15 +127,15 @@ document.querySelectorAll("#mob-nav .mob-link").forEach(function(link) {
 /* ── 5. TESTIMONIAL ROTATOR ──────────────────────────── */
 var testimonials = [
     {
-        quote: "\u201cJBM handled the full electrical fit-out for our new manufacturing facility \u2014 3-phase power, motor control, high bay lighting and safety systems. The scope was significant and the timeline was tight. They delivered on schedule, on budget, and passed all compliance checks without a single issue.\u201d",
+        quote: "\u201cJBM handled the full electrical fit-out for our new manufacturing facility. 3-phase power, motor control, high bay lighting and safety systems. The scope was significant and the timeline was tight. They delivered on schedule, on budget, and passed all compliance checks without a single issue.\u201d",
         avatar: "MR", name: "Michael R.", role: "General Manager, Manufacturing Facility"
     },
     {
-        quote: "\u201cWe engaged JBM for our medical centre fit-out \u2014 lighting design, compliance wiring, and full installation. They communicated clearly throughout, managed every detail professionally and delivered on time. Extremely happy with the result.\u201d",
+        quote: "\u201cWe engaged JBM for our medical centre fit-out, lighting design, compliance wiring, and full installation. They communicated clearly throughout, managed every detail professionally and delivered on time. Extremely happy with the result.\u201d",
         avatar: "SC", name: "Sarah C.", role: "Practice Manager, Medical Centre"
     },
     {
-        quote: "\u201cHad JBM install EV chargers and upgrade our switchboard at home. Clean work, no fuss, done faster than expected. The 20-year guarantee sealed it for us \u2014 would absolutely recommend to anyone looking for a reliable, professional electrician.\u201d",
+        quote: "\u201cHad JBM install EV chargers and upgrade our switchboard at home. Clean work, no fuss, done faster than expected. The 20-year guarantee sealed it for us, would absolutely recommend to anyone looking for a reliable, professional electrician.\u201d",
         avatar: "DW", name: "David W.", role: "Homeowner, Melbourne"
     }
 ];
