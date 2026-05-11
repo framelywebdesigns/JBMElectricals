@@ -333,12 +333,8 @@
 
 <!-- Gallery manifest — built and updated by CMS deploy hook; for now, hardcoded list -->
 <script>
-window.JBM_GALLERY_FILES = [
-    "domestic-gallery",
-    "industrial-gallery",
-    "commercial-gallery",
-    "rural-gallery"
-];
+/* Gallery file list — fetched live from GitHub via /api/content */
+window.JBM_GALLERY_FETCH = "/api/content?type=gallery";
 </script>
 
 
