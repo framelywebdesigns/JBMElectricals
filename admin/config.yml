@@ -1,0 +1,54 @@
+# JBM Electrical — Decap CMS configuration
+
+# Backend — GitHub OAuth (configured at deployment)
+backend:
+  name: github
+  repo: USERNAME/REPO          # Replace with actual GitHub repo on deployment
+  branch: main
+
+# Where uploaded media goes
+media_folder: "assets/uploads"
+public_folder: "/assets/uploads"
+
+# Site URL (set during deployment)
+site_url: https://jbmelectricalcontractors.com.au
+display_url: https://jbmelectricalcontractors.com.au
+logo_url: /assets/images/jbm-logo.svg
+
+# Content collections
+collections:
+
+  # ─── Gallery ─────────────────────────────────────────────
+  - name: "gallery"
+    label: "Gallery"
+    label_singular: "Photo"
+    folder: "content/gallery"
+    create: true
+    delete: true
+    slug: "{{slug}}"
+    extension: "json"
+    format: "json"
+    summary: "{{title}} ({{category}})"
+    fields:
+      - {label: "Title", name: "title", widget: "string", hint: "A short description of the photo"}
+      - {label: "Category", name: "category", widget: "select", options: ["Domestic", "Commercial", "Industrial", "Rural"]}
+      - {label: "Photo", name: "image", widget: "image", media_library: {config: {multiple: false}}}
+      - {label: "Date", name: "date", widget: "datetime", default: "", format: "YYYY-MM-DD"}
+
+  # ─── Blog ────────────────────────────────────────────────
+  - name: "blog"
+    label: "Blog"
+    label_singular: "Post"
+    folder: "content/blog"
+    create: true
+    delete: true
+    slug: "{{slug}}"
+    extension: "md"
+    format: "frontmatter"
+    summary: "{{title}}"
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Cover Image", name: "cover", widget: "image"}
+      - {label: "Date", name: "date", widget: "datetime", default: "", format: "YYYY-MM-DD"}
+      - {label: "Excerpt", name: "excerpt", widget: "text", hint: "A short summary shown on the blog listing — 1-2 sentences"}
+      - {label: "Body", name: "body", widget: "markdown"}
