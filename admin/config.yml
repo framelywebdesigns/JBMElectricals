@@ -1,18 +1,20 @@
 # JBM Electrical — Decap CMS configuration
 
-# Backend — GitHub OAuth (configured at deployment)
+# Backend — GitHub OAuth via our own Vercel functions
 backend:
   name: github
-  repo: USERNAME/REPO          # Replace with actual GitHub repo on deployment
+  repo: framelywebdesigns/JBMElectricals
   branch: main
+  base_url: https://jbm-electricals.vercel.app
+  auth_endpoint: /api/auth
 
 # Where uploaded media goes
 media_folder: "assets/uploads"
 public_folder: "/assets/uploads"
 
-# Site URL (set during deployment)
-site_url: https://jbmelectricalcontractors.com.au
-display_url: https://jbmelectricalcontractors.com.au
+# Site URL
+site_url: https://jbm-electricals.vercel.app
+display_url: https://jbm-electricals.vercel.app
 logo_url: /assets/images/jbm-logo.svg
 
 # Content collections
