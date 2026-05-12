@@ -34,7 +34,7 @@ collections:
     fields:
       - {label: "Title", name: "title", widget: "string", hint: "A short description of the photo"}
       - {label: "Category", name: "category", widget: "select", options: ["Domestic", "Commercial", "Industrial", "Rural"]}
-      - {label: "Photo", name: "image", widget: "image", media_library: {config: {multiple: false}}}
+      - {label: "Photo", name: "image", widget: "image", choose_url: false, media_library: {config: {multiple: false}}}
       - {label: "Date", name: "date", widget: "datetime", default: "", format: "YYYY-MM-DD"}
 
   # ─── Blog ────────────────────────────────────────────────
@@ -50,7 +50,7 @@ collections:
     summary: "{{title}}"
     fields:
       - {label: "Title", name: "title", widget: "string"}
-      - {label: "Cover Image", name: "cover", widget: "image"}
+      - {label: "Cover Image", name: "cover", widget: "image", choose_url: false}
       - {label: "Date", name: "date", widget: "datetime", default: "", format: "YYYY-MM-DD"}
       - {label: "Excerpt", name: "excerpt", widget: "text", hint: "A short summary shown on the blog listing — 1-2 sentences"}
       - {label: "Body", name: "body", widget: "markdown"}
