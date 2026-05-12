@@ -178,6 +178,26 @@
         @media(max-width:480px) {
             .gal-grid { grid-template-columns: 1fr; }
         }
+
+        /* Loading spinner */
+        .content-spinner {
+            grid-column: 1 / -1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 80px 20px;
+        }
+        .content-spinner::after {
+            content: "";
+            width: 38px; height: 38px;
+            border: 3px solid rgba(0, 85, 140, .12);
+            border-top-color: var(--amber);
+            border-radius: 50%;
+            animation: contentSpin .9s linear infinite;
+        }
+        @keyframes contentSpin {
+            to { transform: rotate(360deg); }
+        }
     </style>
 </head>
 <body>
@@ -312,7 +332,7 @@
             <button class="gal-filter-btn" data-filter="Rural">Rural</button>
         </div>
         <div class="gal-grid" id="gal-grid">
-            <!-- Items injected by JS from content/gallery/*.json -->
+            <div class="content-spinner"></div>
         </div>
     </div>
 </section>
