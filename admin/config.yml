@@ -53,4 +53,4 @@ collections:
       - {label: "Cover Image", name: "cover", widget: "image", choose_url: false}
       - {label: "Date", name: "date", widget: "datetime", date_format: "YYYY-MM-DD", time_format: false, picker_utc: false, default: "{{now}}"}
       - {label: "Excerpt", name: "excerpt", widget: "text", hint: "A short summary shown on the blog listing — 1-2 sentences"}
-      - {label: "Body", name: "body", widget: "markdown"}
+      - {label: "Body", name: "body", widget: "markdown", modes: ["rich_text"], editor: {preview: false}}
