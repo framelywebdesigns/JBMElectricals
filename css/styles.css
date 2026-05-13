@@ -72,30 +72,11 @@
         /* =========================================================
            TOP BAR
         ========================================================= */
-        .top-bar {
-            background: var(--navy);
-            border-bottom: none;
-            position: fixed; top: 0; left: 0; right: 0; z-index: 902;
-            height: 36px;
-        }
-        .top-bar-inner {
-            max-width:1280px; margin:0 auto; padding:0 40px;
-            height: 36px;
-            display:flex; justify-content:flex-end; align-items:center; gap:24px;
-        }
-        .top-link {
-            display:flex; align-items:center; gap:7px;
-            font-size:12.5px; color:rgba(255,255,255,.5); letter-spacing:.03em; transition:color .2s;
-        }
-        .top-link:hover { color:var(--amber); }
-        .top-link svg { width:13px; height:13px; fill:var(--amber); flex-shrink:0; }
-        .top-divider { width:1px; height:14px; background:rgba(255,255,255,.1); }
-
         /* =========================================================
-           HEADER — transparent over hero, solidifies on scroll
+           HEADER — solid white, fixed at top
         ========================================================= */
         #header {
-            position:fixed; top:36px; left:0; right:0; z-index:900;
+            position:fixed; top:0; left:0; right:0; z-index:900;
             padding:0 40px;
             background:var(--white);
             box-shadow:0 2px 32px rgba(0,0,0,.1);
@@ -103,14 +84,10 @@
             transition:background .4s ease, box-shadow .4s ease;
         }
         #header.solid {
-            top:36px;
+            top:0;
             background:var(--white);
             box-shadow:0 2px 32px rgba(0,0,0,.1);
             border-bottom:2px solid var(--amber);
-        }
-        /* When header is solid, top bar slides up behind it */
-        body.scrolled .top-bar {
-            background: var(--navy-deep);
         }
         .header-wrap {
             max-width:1280px; margin:0 auto;
@@ -826,7 +803,6 @@
         ========================================================= */
         @media(max-width:1200px) {
             .sec-inner { padding:0 32px; }
-            .top-bar-inner { padding:0 32px; }
             #header { padding:0 32px; }
             .hero-inner { padding:130px 32px 170px; }
             .hero-ribbon-inner { padding:0 32px; }
@@ -911,11 +887,6 @@
             nav, .h-cta { display:none; }
             .ham { display:flex; }
             #mob-nav { display:block; }
-
-            /* Top bar — hidden on mobile */
-            .top-bar { display:none; }
-            .top-link { font-size:11.5px; }
-            .top-link:not(:first-child).top-link { display:none; }
 
             /* General spacing */
             .sec-inner { padding:0 20px; }
