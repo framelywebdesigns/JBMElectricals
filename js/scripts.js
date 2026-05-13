@@ -228,7 +228,7 @@ document.querySelectorAll(".fade-up").forEach(function(el) {
         var header = document.getElementById("header");
         var wrap = document.querySelector(".sp-content-wrap");
         if (hero) hero.style.display = visible ? "" : "none";
-        if (wrap) wrap.style.paddingTop = visible ? "" : "148px";
+        if (wrap) wrap.style.paddingTop = visible ? "" : "112px";
         if (header) {
             if (!visible) {
                 header.classList.add("solid");
