@@ -102,24 +102,6 @@
             display: block;
             filter: grayscale(8%);
         }
-        .story-photo-badge {
-            position: absolute; bottom: -18px; right: -18px; z-index: 2;
-            background: var(--amber);
-            padding: 14px 20px;
-            text-align: center;
-        }
-        .story-photo-badge-num {
-            font-family: "Barlow Semi Condensed", sans-serif;
-            font-size: 32px; font-weight: 700;
-            color: var(--white); line-height: 1;
-            display: block;
-        }
-        .story-photo-badge-lbl {
-            font-size: 9.5px; font-weight: 600;
-            letter-spacing: .18em; text-transform: uppercase;
-            color: rgba(255,255,255,.8);
-            display: block; margin-top: 2px;
-        }
         .story-name-tag {
             margin-top: 40px;
             padding: 18px 0;
@@ -168,7 +150,6 @@
             .story-photo-col { position: static; }
             .story-photo { aspect-ratio: 3/2; object-position: center 20%; }
             .story-photo-wrap::before { display: none; }
-            .story-photo-badge { bottom: -14px; right: 14px; }
             .creds-inner { grid-template-columns: 1fr; gap: 40px; }
             .values-grid { grid-template-columns: repeat(2, 1fr); }
         }
@@ -333,12 +314,7 @@
             <!-- LEFT — photo -->
             <div class="story-photo-col fade-up">
                 <div class="story-photo-wrap">
-                    <!-- Johnny McLachlan — owner photo -->
                     <img class="story-photo" src="assets/images/johnny.jpg" alt="Johnny McLachlan — JBM Electrical Contractors">
-                    <div class="story-photo-badge">
-                        <span class="story-photo-badge-num">50<sup style="font-size:16px">+</sup></span>
-                        <span class="story-photo-badge-lbl">Yrs Experience</span>
-                    </div>
                 </div>
                 <div class="story-name-tag">
                     <div class="story-name">Johnny McLachlan</div>
