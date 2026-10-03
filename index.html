@@ -473,48 +473,63 @@
                     </div>
 
                     <div class="form-group">
-                        <label class="form-label" for="f-service">Service Required <span>*</span></label>
-                        <div class="select-wrap">
-                            <select class="form-select" id="f-service">
-                                <option value="" disabled selected>Select a service</option>
-                                <optgroup label="Domestic">
-                                    <option value="Power Points &amp; Switches">Power Points &amp; Switches</option>
-                                    <option value="Lighting &amp; Downlights">Lighting &amp; Downlights</option>
-                                    <option value="Fans &amp; Air Conditioning">Fans &amp; Air Conditioning</option>
-                                    <option value="Smart Home Automation">Smart Home Automation</option>
-                                    <option value="EV Charger Supply &amp; Install">EV Charger Supply &amp; Install</option>
-                                    <option value="Switchboard Upgrade">Switchboard Upgrade</option>
-                                    <option value="Safety Switches">Safety Switches</option>
-                                    <option value="Data &amp; TV Points">Data &amp; TV Points</option>
-                                </optgroup>
-                                <optgroup label="Commercial">
-                                    <option value="Shop Fit-out">Shop Fit-out</option>
-                                    <option value="Medical &amp; Dental Centre">Medical &amp; Dental Centre</option>
-                                    <option value="Shopping Centre Maintenance">Shopping Centre Maintenance</option>
-                                    <option value="Commercial Lighting">Commercial Lighting</option>
-                                    <option value="Bakery &amp; Hospitality">Bakery &amp; Hospitality</option>
-                                    <option value="New Construction Wiring">New Construction Wiring (Commercial)</option>
-                                    <option value="Fault Finding &amp; Repairs">Fault Finding &amp; Repairs</option>
-                                </optgroup>
-                                <optgroup label="Industrial">
-                                    <option value="Factory Maintenance &amp; Repairs">Factory Maintenance &amp; Repairs</option>
-                                    <option value="Motor Control Centers">Motor Control Centers</option>
-                                    <option value="Crane &amp; Pump Maintenance">Crane &amp; Pump Maintenance</option>
-                                    <option value="High Bay Lighting">High Bay Lighting</option>
-                                    <option value="3 Phase Power">3 Phase Power Installations</option>
-                                    <option value="Cable &amp; Ladder Installations">Cable &amp; Ladder Installations</option>
-                                    <option value="Heavy Machinery Wiring">Heavy Machinery Wiring</option>
-                                </optgroup>
-                                <optgroup label="Other">
-                                    <option value="Rural Electrical">Rural Electrical</option>
-                                    <option value="Fire Alarm Systems">Fire Alarm Systems</option>
-                                    <option value="Emergency Lighting">Emergency Lighting</option>
-                                    <option value="Data &amp; Network Solutions">Data &amp; Network Solutions</option>
-                                    <option value="Other / Not Sure">Other / Not Sure</option>
-                                </optgroup>
-                            </select>
+                        <div class="form-label" id="lbl-service">Service Required <span>*</span></div>
+                        <div class="ms" id="f-service">
+                            <div class="ms-field" id="ms-field">
+                                <div class="ms-tags" id="ms-tags"></div>
+                                <button type="button" class="ms-toggle" id="ms-toggle" aria-haspopup="true" aria-expanded="false" aria-controls="ms-panel" aria-labelledby="lbl-service">
+                                    <svg viewBox="0 0 10 5" aria-hidden="true"><path d="M0 0h10L5 5z"/></svg>
+                                </button>
+                            </div>
+                            <div class="ms-panel" id="ms-panel" role="group" aria-labelledby="lbl-service">
+                                <div class="ms-list">
+                                    <div class="ms-group">
+                                        <div class="ms-group-label">Domestic</div>
+                                        <label class="ms-opt"><input type="checkbox" value="Power Points &amp; Switches"><span>Power Points &amp; Switches</span></label>
+                                        <label class="ms-opt"><input type="checkbox" value="Lighting &amp; Downlights"><span>Lighting &amp; Downlights</span></label>
+                                        <label class="ms-opt"><input type="checkbox" value="Fans &amp; Air Conditioning"><span>Fans &amp; Air Conditioning</span></label>
+                                        <label class="ms-opt"><input type="checkbox" value="Smart Home Automation"><span>Smart Home Automation</span></label>
+                                        <label class="ms-opt"><input type="checkbox" value="EV Charger Supply &amp; Install"><span>EV Charger Supply &amp; Install</span></label>
+                                        <label class="ms-opt"><input type="checkbox" value="Switchboard Upgrade"><span>Switchboard Upgrade</span></label>
+                                        <label class="ms-opt"><input type="checkbox" value="Safety Switches"><span>Safety Switches</span></label>
+                                        <label class="ms-opt"><input type="checkbox" value="Data &amp; TV Points"><span>Data &amp; TV Points</span></label>
+                                    </div>
+                                    <div class="ms-group">
+                                        <div class="ms-group-label">Commercial</div>
+                                        <label class="ms-opt"><input type="checkbox" value="Shop Fit-out"><span>Shop Fit-out</span></label>
+                                        <label class="ms-opt"><input type="checkbox" value="Medical &amp; Dental Centre"><span>Medical &amp; Dental Centre</span></label>
+                                        <label class="ms-opt"><input type="checkbox" value="Shopping Centre Maintenance"><span>Shopping Centre Maintenance</span></label>
+                                        <label class="ms-opt"><input type="checkbox" value="Commercial Lighting"><span>Commercial Lighting</span></label>
+                                        <label class="ms-opt"><input type="checkbox" value="Bakery &amp; Hospitality"><span>Bakery &amp; Hospitality</span></label>
+                                        <label class="ms-opt"><input type="checkbox" value="New Construction Wiring"><span>New Construction Wiring (Commercial)</span></label>
+                                        <label class="ms-opt"><input type="checkbox" value="Fault Finding &amp; Repairs"><span>Fault Finding &amp; Repairs</span></label>
+                                    </div>
+                                    <div class="ms-group">
+                                        <div class="ms-group-label">Industrial</div>
+                                        <label class="ms-opt"><input type="checkbox" value="Factory Maintenance &amp; Repairs"><span>Factory Maintenance &amp; Repairs</span></label>
+                                        <label class="ms-opt"><input type="checkbox" value="Motor Control Centers"><span>Motor Control Centers</span></label>
+                                        <label class="ms-opt"><input type="checkbox" value="Crane &amp; Pump Maintenance"><span>Crane &amp; Pump Maintenance</span></label>
+                                        <label class="ms-opt"><input type="checkbox" value="High Bay Lighting"><span>High Bay Lighting</span></label>
+                                        <label class="ms-opt"><input type="checkbox" value="3 Phase Power"><span>3 Phase Power Installations</span></label>
+                                        <label class="ms-opt"><input type="checkbox" value="Cable &amp; Ladder Installations"><span>Cable &amp; Ladder Installations</span></label>
+                                        <label class="ms-opt"><input type="checkbox" value="Heavy Machinery Wiring"><span>Heavy Machinery Wiring</span></label>
+                                    </div>
+                                    <div class="ms-group">
+                                        <div class="ms-group-label">Other</div>
+                                        <label class="ms-opt"><input type="checkbox" value="Rural Electrical"><span>Rural Electrical</span></label>
+                                        <label class="ms-opt"><input type="checkbox" value="Fire Alarm Systems"><span>Fire Alarm Systems</span></label>
+                                        <label class="ms-opt"><input type="checkbox" value="Emergency Lighting"><span>Emergency Lighting</span></label>
+                                        <label class="ms-opt"><input type="checkbox" value="Data &amp; Network Solutions"><span>Data &amp; Network Solutions</span></label>
+                                        <label class="ms-opt"><input type="checkbox" value="Other / Not Sure"><span>Other / Not Sure</span></label>
+                                    </div>
+                                </div>
+                                <div class="ms-foot">
+                                    <button type="button" class="ms-clear" id="ms-clear">Clear all</button>
+                                    <button type="button" class="ms-done" id="ms-done">Done</button>
+                                </div>
+                            </div>
                         </div>
-                        <div class="form-error" id="err-service">Please select a service type.</div>
+                        <div class="form-error" id="err-service">Please select at least one service.</div>
                     </div>
 
                     <div class="form-group">
