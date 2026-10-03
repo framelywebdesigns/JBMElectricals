@@ -542,21 +542,6 @@ document.querySelectorAll(".fade-up").forEach(function(el) {
 })();
 
 
-/* ── 9. HERO CROSSFADE ───────────────────────────────── */
-(function() {
-    var layers = document.querySelectorAll(".hero-bg");
-    if (!layers.length) return;
-
-    var current = 0;
-    layers[current].classList.add("active");
-
-    setInterval(function() {
-        layers[current].classList.remove("active");
-        current = (current + 1) % layers.length;
-        layers[current].classList.add("active");
-    }, 5000);
-})();
-
 /* ── IMAGE OPTIMISATION HELPER ──────────────────────── */
 /* Wraps an image URL through Vercel's image optimisation endpoint.
    Falls back gracefully if running locally (no /_vercel/image available). */
