@@ -180,25 +180,10 @@
         }
         .hero-bg {
             position:absolute; inset:0;
-            background-size:cover;
-            opacity:0;
-            transition:opacity 2.5s ease-in-out;
-        }
-        .hero-bg.active { opacity:1; }
-        .hero-bg-1 {
             background-color:var(--navy-deep);
             background-image:url("../assets/images/hero-bg.png");
-            background-position:60% center;
+            background-size:cover; background-position:60% center;
         }
-        .hero-bg-2 {
-            background-image:url("../assets/images/hero-bg-2.jpg");
-            background-position:center center;
-        }
-        .hero-bg-3 {
-            background-image:url("../assets/images/hero-bg-3.png");
-            background-position:center 30%;
-        }
-        @keyframes heroZoom { from{transform:scale(1.05)} to{transform:scale(1)} }
         .hero-overlay {
             position:absolute; inset:0;
             background:linear-gradient(180deg, rgba(0,85,140,.45) 0%, rgba(0,85,140,.65) 55%, rgba(0,85,140,.82) 100%);
