@@ -124,6 +124,120 @@ document.querySelectorAll("#mob-nav .mob-link").forEach(function(link) {
     });
 })();
 
+/* ── 4b. SERVICE MULTI-SELECT ────────────────────────── */
+/* Checkbox dropdown for the "Service Required" field. The container (#f-service)
+   exposes its selection as .value (comma-separated), so the validation above
+   works unchanged and a form backend can read the same string later. */
+(function() {
+    var root = document.getElementById("f-service");
+    if (!root || !root.classList.contains("ms")) return;
+
+    var toggle = document.getElementById("ms-toggle");
+    var field  = document.getElementById("ms-field");
+    var panel  = document.getElementById("ms-panel");
+    var tagsEl = document.getElementById("ms-tags");
+    var boxes  = Array.prototype.slice.call(panel.querySelectorAll("input[type=checkbox]"));
+
+    function isOpen() { return root.classList.contains("open"); }
+
+    function setOpen(open) {
+        root.classList.toggle("open", open);
+        toggle.setAttribute("aria-expanded", open ? "true" : "false");
+        if (open) keepInView();
+    }
+
+    /* If the panel would run off the bottom of the screen, scroll it into view */
+    function keepInView() {
+        requestAnimationFrame(function() {
+            var over = panel.getBoundingClientRect().bottom - window.innerHeight + 16;
+            if (over > 0) window.scrollBy({ top: over, behavior: "smooth" });
+        });
+    }
+
+    /* Rebuild the tags and the comma-separated value from the ticked boxes */
+    function render() {
+        var picked = boxes.filter(function(b) { return b.checked; });
+        root.value = picked.map(function(b) { return b.value; }).join(", ");
+        tagsEl.innerHTML = "";
+        picked.forEach(function(b) {
+            var label = b.nextElementSibling.textContent;
+            var tag = document.createElement("span");
+            tag.className = "ms-tag";
+            var text = document.createElement("span");
+            text.textContent = label;
+            var x = document.createElement("button");
+            x.type = "button";
+            x.className = "ms-tag-x";
+            x.setAttribute("aria-label", "Remove " + label);
+            x.textContent = "\u00d7";
+            x.addEventListener("click", function(e) {
+                e.stopPropagation();
+                b.checked = false;
+                changed();
+                toggle.focus();
+            });
+            tag.appendChild(text);
+            tag.appendChild(x);
+            tagsEl.appendChild(tag);
+        });
+    }
+
+    /* Selection changed: re-render and let the form clear any error state */
+    function changed() {
+        render();
+        root.dispatchEvent(new Event("input", { bubbles: true }));
+    }
+
+    boxes.forEach(function(b) { b.addEventListener("change", changed); });
+
+    field.addEventListener("click", function() { setOpen(!isOpen()); });
+
+    document.getElementById("ms-done").addEventListener("click", function() {
+        setOpen(false);
+        toggle.focus();
+    });
+    document.getElementById("ms-clear").addEventListener("click", function() {
+        boxes.forEach(function(b) { b.checked = false; });
+        changed();
+    });
+
+    /* Close on outside click or when focus moves elsewhere */
+    document.addEventListener("click", function(e) {
+        var path = e.composedPath ? e.composedPath() : [];
+        var inside = path.indexOf(root) !== -1 || root.contains(e.target);
+        if (!inside && isOpen()) setOpen(false);
+    });
+    document.addEventListener("focusin", function(e) {
+        if (!root.contains(e.target) && isOpen()) setOpen(false);
+    });
+
+    /* Keyboard: Esc closes, arrow keys move between options */
+    root.addEventListener("keydown", function(e) {
+        if (e.key === "Escape" && isOpen()) {
+            e.stopPropagation();
+            setOpen(false);
+            toggle.focus();
+            return;
+        }
+        if (e.key !== "ArrowDown" && e.key !== "ArrowUp") return;
+        var i = boxes.indexOf(document.activeElement);
+        if (i === -1) {
+            if (e.key === "ArrowDown") {
+                e.preventDefault();
+                if (!isOpen()) setOpen(true);
+                boxes[0].focus();
+            }
+            return;
+        }
+        e.preventDefault();
+        var next = e.key === "ArrowDown" ? i + 1 : i - 1;
+        if (next < 0) { toggle.focus(); return; }
+        if (next < boxes.length) boxes[next].focus();
+    });
+
+    render();
+})();
+
 /* ── 5. TESTIMONIAL ROTATOR ──────────────────────────── */
 var testimonials = [
     {
