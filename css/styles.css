@@ -819,6 +819,26 @@
             .ms-opt { padding:12px 14px; }
             .ms-list { max-height:240px; }
         }
+        /* =========================================================
+           PROPERTY TYPE: single-choice chips (native radios underneath)
+        ========================================================= */
+        .ptype-group { display:flex; flex-wrap:wrap; gap:8px; }
+        .ptype-opt { position:relative; cursor:pointer; }
+        .ptype-opt input { position:absolute; opacity:0; width:1px; height:1px; margin:0; }
+        .ptype-opt span {
+            display:block; padding:11px 18px;
+            font-family:"DM Sans",sans-serif; font-size:13.5px; color:rgba(255,255,255,.7);
+            background:rgba(255,255,255,.06); border:1.5px solid rgba(255,255,255,.1);
+            transition:border-color .2s, background .2s, color .2s;
+        }
+        .ptype-opt:hover span { border-color:rgba(200,121,10,.6); color:var(--white); }
+        .ptype-opt input:checked + span {
+            border-color:var(--amber); background:rgba(200,121,10,.18); color:var(--white);
+        }
+        .ptype-opt input:focus-visible + span { outline:2px solid var(--amber); outline-offset:2px; }
+        @media(max-width:480px) {
+            .ptype-opt span { padding:10px 14px; font-size:13px; }
+        }
         /* Checkbox row */
         .form-check {
             display:flex; align-items:flex-start; gap:11px; cursor:pointer;
