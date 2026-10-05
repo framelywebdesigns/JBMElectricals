@@ -1,8 +1,9 @@
 ---
-title: "Installing an EV Charger at Home — What to Know"
-date: "2026-04-10"
-cover: "/assets/uploads/ev-blog.png"
-excerpt: "Thinking about a home EV charger? Here is what is involved and what most people get wrong on their first quote."
+title: Installing an EV Charger at Home — What to Know
+cover: /assets/uploads/ev-blog.png
+date: 2026-10-05
+excerpt: Thinking about a home EV charger? Here is what is involved and what
+  most people get wrong on their first quote.
 ---
 
 EV ownership is climbing fast across Melbourne, and home charging is becoming the standard. If you are looking at getting a charger installed, here is what you actually need to know.
