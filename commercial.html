@@ -109,6 +109,13 @@
             font-size: 16px; color: var(--text);
             line-height: 1.85; font-weight: 300; max-width: 720px;
         }
+        .sp-detail-intro + .sp-detail-intro { margin-top: 18px; }
+        .sp-detail-outro {
+            font-size: 16px; color: var(--text);
+            line-height: 1.85; font-weight: 300; max-width: 720px;
+            margin-top: 32px;
+        }
+        .sp-detail-outro + .sp-detail-outro { margin-top: 18px; }
         .sp-includes-wrap {
             background: var(--off-white);
             padding: 32px 36px; margin-top: 36px;
@@ -389,51 +396,187 @@ window.JBM_CATEGORY = "Commercial";
 window.JBM_CATEGORY_INTRO = "JBM works across Melbourne's commercial sector, from single tenancy fit-outs to ongoing shopping centre maintenance. Here is the full range of what we do.";
 window.JBM_SERVICES = {
     "shop-fitouts": {
-        title: "Shop Fit-outs",
-        intro: "JBM has completed commercial shop fit-outs across Melbourne. New tenancy, renovation, or full fit-out from scratch, the electrical gets done to spec and on schedule.",
-        includes: ["Full electrical fit-out","Lighting installation","Power point and outlet installation","Three phase supply where needed","Switchboard installation","Safety switch and circuit installation","Compliance certification"],
+        title: "Commercial Shop Fit-outs",
+        intro: [
+            "JBM Electrical Contractors delivers complete electrical solutions for commercial shop fit-outs across Melbourne and regional country towns. Whether you're opening a new business, renovating an existing premises or fitting out a brand-new tenancy, we provide reliable, high-quality electrical installations completed to specification and on schedule.",
+            "We work closely with builders, shopfitters, business owners and project managers to ensure every stage of the electrical installation is completed efficiently, safely and in accordance with Australian Standards, helping your business open on time and ready to operate."
+        ],
+        includes: [
+            "Complete electrical fit-outs for new and existing tenancies",
+            "Power and lighting design and installation",
+            "LED lighting and energy-efficient lighting upgrades",
+            "Emergency and exit lighting installation",
+            "Switchboard installation and upgrades",
+            "Data, phone and network cabling",
+            "TV and audiovisual wiring",
+            "General power outlets and dedicated circuits",
+            "Three-phase power installations",
+            "Electrical supply for commercial kitchens and equipment",
+            "Air conditioning electrical connections",
+            "Test and tag services",
+            "Emergency lighting testing",
+            "Safety switch (RCD) installation",
+            "Electrical fault finding and repairs",
+            "Final testing, commissioning and compliance certification"
+        ],
+        outro: [
+            "Whether you're fitting out a retail shop, café, restaurant, office, medical clinic, warehouse or other commercial premises, JBM Electrical has the experience to deliver professional results with minimal disruption to your project."
+        ],
         related: ["lighting-installations","new-construction-wiring","tenant-improvements"]
     },
     "tenant-improvements": {
-        title: "Tenant Improvements",
-        intro: "Tenancy changing hands or getting a refresh? JBM handles the electrical side of tenant improvement works, coordinating with builders and project managers.",
-        includes: ["Lighting modifications","Power circuit changes","Data and communications points","Switchboard work","Compliance and handover documentation"],
+        title: "Commercial Tenant Improvement Works",
+        intro: [
+            "We work closely with builders, project managers, property owners and commercial tenants to ensure all electrical modifications are completed efficiently, safely and on schedule. From minor alterations to complete tenancy reconfigurations, JBM delivers quality workmanship with minimal disruption to your project."
+        ],
+        includes: [
+            "Lighting modifications and upgrades",
+            "LED lighting conversions",
+            "Power circuit alterations and new dedicated circuits",
+            "Relocation and installation of power points and switches",
+            "Data, communications and network point installation",
+            "Switchboard upgrades and modifications",
+            "Three-phase power alterations where required",
+            "Emergency and exit lighting modifications",
+            "Electrical work for office, retail and commercial fit-outs",
+            "Electrical fault finding and repairs during refurbishment",
+            "Testing, commissioning and compliance certification",
+            "Handover documentation and compliance reports"
+        ],
         related: ["shop-fitouts","network-data","lighting-installations"]
     },
     "medical-dental": {
-        title: "Medical & Dental Centres",
-        intro: "Medical and dental environments have specific electrical requirements. JBM has worked in clinics and medical centres and understands what these facilities need.",
-        includes: ["Medical grade power circuits","Lighting installation","Dedicated equipment circuits","Emergency and exit lighting","Safety compliance and certification","Ongoing maintenance and repairs"],
+        title: "Medical & Dental Centre Electrical Services",
+        intro: [
+            "JBM Electrical Contractors provides specialised electrical services for medical centres, dental clinics and allied health facilities across Melbourne and regional country towns.",
+            "Whether you're building a new clinic, renovating an existing practice or upgrading your electrical infrastructure, JBM delivers professional installations and maintenance with minimal disruption to staff and patients."
+        ],
+        includes: [
+            "Complete electrical installations for new medical and dental practices",
+            "Medical and dental clinic fit-outs",
+            "Power and dedicated circuits for specialised equipment",
+            "LED lighting and energy-efficient lighting upgrades",
+            "Consultation room, treatment room and surgery lighting",
+            "Emergency and exit lighting installation and testing",
+            "Switchboard upgrades and electrical distribution",
+            "Data, communications and network cabling",
+            "Power and data outlets for consulting rooms and reception areas",
+            "Uninterruptible Power Supply (UPS) electrical connections",
+            "Electrical fault finding and repairs",
+            "Preventative electrical maintenance",
+            "Safety switch (RCD) installation and testing",
+            "Testing, commissioning and compliance certification"
+        ],
         related: ["emergency-exit-lighting","fault-finding","lighting-installations"]
     },
     "bakeries-hospitality": {
-        title: "Bakeries & Hospitality",
-        intro: "Bakeries and hospitality venues run heavy electrical loads. JBM has experience in this environment and knows what these systems need to handle.",
-        includes: ["Three phase power installation","Equipment connections","Exhaust and ventilation wiring","Lighting installation","Switchboard upgrades","Ongoing maintenance"],
+        title: "Bakeries & Hospitality Electrical Services",
+        intro: [
+            "JBM Electrical Contractors provides specialised electrical services for bakeries, cafés, restaurants, commercial kitchens and hospitality venues across Melbourne and regional country towns.",
+            "Whether you're opening a new venue, renovating an existing business or upgrading your electrical infrastructure, JBM delivers professional electrical solutions designed to meet the high power demands of commercial kitchens and food preparation areas."
+        ],
+        includes: [
+            "Three-phase power installation and upgrades",
+            "Electrical connections for commercial ovens, mixers, proofers and bakery equipment",
+            "Power supply for coffee machines, refrigeration and commercial kitchen equipment",
+            "Exhaust fan and commercial ventilation wiring",
+            "Kitchen canopy and make-up air electrical connections",
+            "LED lighting installation and energy-efficient lighting upgrades",
+            "Emergency and exit lighting installation and testing",
+            "Switchboard upgrades and additional electrical capacity",
+            "Dedicated power circuits for high-load equipment",
+            "Data and communications cabling",
+            "Electrical fault finding and emergency repairs",
+            "Scheduled preventative maintenance programs",
+            "Testing, commissioning and compliance certification"
+        ],
         related: ["shop-fitouts","fault-finding","lighting-installations"]
     },
     "shopping-centre-maintenance": {
-        title: "Shopping Centre Maintenance",
-        intro: "JBM provides ongoing electrical maintenance and repair services for shopping centres and large retail environments.",
-        includes: ["Fault finding and repairs","Lighting maintenance and replacement","Emergency lighting testing","Switchboard maintenance","Scheduled maintenance programs"],
+        title: "Shopping Centre Electrical Maintenance",
+        intro: [
+            "JBM Electrical Contractors provides reliable electrical maintenance and repair services for shopping centres, retail complexes and large commercial facilities across Melbourne and regional country towns. From routine maintenance to emergency repairs, JBM works with shopping centre owners, centre managers, facility managers and property management companies to deliver prompt, professional electrical services that keep your site operating at its best."
+        ],
+        includes: [
+            "Electrical fault finding and repairs",
+            "Lighting maintenance and LED lighting replacement",
+            "Emergency and exit lighting testing and maintenance",
+            "Switchboard inspections and preventative maintenance",
+            "Safety switch (RCD) testing",
+            "Power outage response and emergency repairs",
+            "Replacement of damaged power points and switches",
+            "Car park and external lighting maintenance",
+            "Tenancy electrical maintenance and repairs",
+            "Data and communications fault repairs",
+            "Scheduled preventative maintenance programs",
+            "Testing, commissioning and compliance certification"
+        ],
+        outro: [
+            "Whether you require ongoing maintenance, after-hours service or urgent electrical repairs, JBM provides responsive, dependable support to help minimise downtime and maintain a safe environment for retailers, staff and the public."
+        ],
         related: ["emergency-exit-lighting","lighting-installations","fault-finding"]
     },
     "lighting-installations": {
-        title: "Lighting Installations",
-        intro: "JBM installs commercial lighting across offices, retail spaces, warehouses and common areas, from straightforward replacements through to full lighting fit-outs.",
-        includes: ["LED and fluorescent installation","Downlight installation","External and car park lighting","Emergency and exit lighting","Lighting circuit installation","Energy-efficient upgrades"],
+        title: "Commercial Lighting Installation & Upgrades",
+        intro: [
+            "Professional lighting improves safety, productivity, presentation and energy efficiency in every commercial environment. JBM Electrical Contractors provides complete commercial lighting installation and upgrade services across Melbourne and regional country towns for offices, retail stores, warehouses, factories, medical centres, schools and commercial facilities."
+        ],
+        includes: [
+            "LED lighting installation and upgrades",
+            "Fluorescent light replacement and conversion to LED",
+            "Commercial downlight installation",
+            "Office, retail and warehouse lighting",
+            "High-bay and low-bay lighting installation",
+            "External building and façade lighting",
+            "Car park and security lighting",
+            "Emergency and exit lighting installation and testing",
+            "Lighting control systems, timers and sensors",
+            "Lighting circuit installation and alterations",
+            "Energy-efficient lighting upgrades and recommendations",
+            "Fault finding, repairs and replacement of existing light fittings",
+            "Testing, commissioning and compliance certification"
+        ],
         related: ["lighting-design-energy","emergency-exit-lighting","shop-fitouts"]
     },
     "new-construction-wiring": {
-        title: "New Construction Wiring",
-        intro: "JBM carries out full electrical installations for new commercial construction, from rough-in through to final connection and certification.",
-        includes: ["Rough-in wiring","Power and lighting installation","Switchboard installation","Final connections","Electrical testing and inspection","Certification and compliance documentation"],
+        title: "New Commercial Construction Wiring",
+        intro: [
+            "JBM Electrical Contractors provides complete electrical installations for new commercial construction projects across Melbourne and regional country towns. From the initial rough-in through to final fit-off, testing and certification, we deliver high-quality electrical work that keeps your project on schedule and built to specification."
+        ],
+        includes: [
+            "Complete electrical installations for new commercial buildings",
+            "Rough-in wiring and cable installation",
+            "Power and lighting installation",
+            "General power outlets and dedicated circuits",
+            "Main switchboard and distribution board installation",
+            "Three-phase power installations",
+            "Data, communications and network cabling",
+            "Emergency and exit lighting systems",
+            "Security, access control and CCTV pre-wiring",
+            "Electrical services for HVAC and mechanical equipment",
+            "Final fit-off and electrical connections",
+            "Testing, inspection and compliance certification",
+            "As-built documentation and project handover"
+        ],
         related: ["shop-fitouts","tenant-improvements","lighting-installations"]
     },
     "emergency-exit-lighting": {
         title: "Emergency & Exit Lighting",
-        intro: "JBM installs and maintains emergency and exit lighting systems for commercial buildings, keeping you compliant with Australian Standards.",
-        includes: ["Emergency light installation","Exit sign installation","Battery backup systems","Regular testing and maintenance","Compliance reporting"],
+        intro: [
+            "Emergency lighting is a critical part of workplace safety, providing illumination during power failures or emergencies to help occupants safely exit the building. JBM works with businesses, property managers and facility operators to ensure systems are installed correctly, regularly maintained and operating reliably."
+        ],
+        includes: [
+            "Emergency light installation",
+            "Exit sign installation and replacement",
+            "LED emergency lighting upgrades",
+            "Battery backup systems",
+            "Emergency lighting repairs and fault finding",
+            "Regular testing and maintenance",
+            "Scheduled maintenance programs",
+            "Replacement of faulty batteries and components",
+            "Compliance testing and reporting",
+            "Certification and maintenance documentation"
+        ],
         related: ["fire-alarm","lighting-installations","shopping-centre-maintenance"]
     },
     "ev-charger": {
@@ -444,26 +587,89 @@ window.JBM_SERVICES = {
     },
     "fire-alarm": {
         title: "Fire Alarm Installation & Maintenance",
-        intro: "JBM installs and maintains fire alarm systems for commercial premises, working to Australian Standards and local requirements.",
-        includes: ["Fire alarm panel installation","Detector and sounder installation","System testing and commissioning","Ongoing maintenance contracts","Compliance certification"],
+        intro: [
+            "Whether you're fitting out a new commercial building, upgrading an existing system or requiring ongoing maintenance, JBM delivers dependable fire alarm solutions with professional installation, testing and documentation."
+        ],
+        includes: [
+            "Fire alarm panel installation",
+            "Smoke detector and heat detector installation",
+            "Manual call point installation",
+            "Alarm sounder and strobe installation",
+            "Fire alarm system upgrades and modifications",
+            "System testing and commissioning",
+            "Fault finding and repairs",
+            "Battery backup testing and replacement",
+            "Scheduled maintenance contracts",
+            "Compliance inspections and reporting",
+            "Certification and system documentation"
+        ],
         related: ["emergency-exit-lighting","shopping-centre-maintenance"]
     },
     "network-data": {
-        title: "Network & Data Solutions",
-        intro: "JBM installs hardwired data and network infrastructure for commercial premises, so your internet and communications are where they need to be.",
-        includes: ["Data point installation","Network cabinet setup","Cable runs and containment","Wi-fi access point wiring","Testing and certification"],
+        title: "Commercial Network & Data Solutions",
+        intro: [
+            "Reliable data and communication systems are essential for every modern business. JBM Electrical Contractors provides professional network and data cabling solutions for commercial premises across Melbourne and regional country towns, delivering fast, dependable connectivity for offices, retail stores, warehouses, medical facilities and industrial sites.",
+            "Whether you're setting up a new business, expanding your existing network or upgrading outdated cabling, JBM designs and installs structured cabling systems that support your current needs while allowing for future growth."
+        ],
+        includes: [
+            "Data point installation",
+            "CAT6 and CAT6A structured data cabling",
+            "Network cabinet and communications rack installation",
+            "Patch panel installation and termination",
+            "Cable runs through walls, ceilings and roof spaces",
+            "Conduit and cable containment systems",
+            "Wi-Fi access point cabling and installation",
+            "NBN internal cabling and network distribution",
+            "Fibre optic pre-installation pathways (where required)",
+            "Office relocations and additional network outlets",
+            "Cable labelling and network organisation",
+            "Testing, certification and compliance reporting"
+        ],
+        outro: [
+            "Whether you require a single data outlet or a complete commercial network installation, JBM delivers neat, reliable and professionally installed cabling that keeps your business connected."
+        ],
         related: ["tenant-improvements","shop-fitouts","new-construction-wiring"]
     },
     "lighting-design-energy": {
         title: "Lighting Design & Energy Efficient Upgrades",
-        intro: "JBM helps commercial clients cut energy costs through lighting redesign and efficiency upgrades, with the full electrical work handled from start to finish.",
-        includes: ["Existing lighting assessment","LED upgrade and replacement","Lighting layout redesign","Sensor and timer controls","Energy saving calculations","Full installation and commissioning"],
+        intro: [
+            "From existing lighting assessments through to complete LED conversions, JBM manages the entire electrical process from design changes and installation through to final testing and commissioning.",
+            "We work with offices, retail spaces, warehouses, industrial facilities, medical centres and commercial buildings to deliver practical lighting solutions that improve visibility, reduce running costs and support long-term energy savings."
+        ],
+        includes: [
+            "Existing lighting assessment and site inspection",
+            "LED lighting upgrades and replacement",
+            "Commercial lighting redesign and layout improvements",
+            "Lighting control systems",
+            "Sensor and timer installation",
+            "Energy-efficient lighting recommendations",
+            "Energy saving calculations and upgrade advice",
+            "Lighting circuit modifications",
+            "Emergency and exit lighting upgrades",
+            "Full electrical installation and commissioning",
+            "Testing, certification and compliance documentation"
+        ],
         related: ["lighting-installations","shop-fitouts","shopping-centre-maintenance"]
     },
     "fault-finding": {
-        title: "Fault Finding & Repairs",
-        intro: "Electrical fault in your commercial premises? JBM finds the problem and fixes it properly.",
-        includes: ["Fault diagnosis","Circuit and switchboard testing","Repair or component replacement","Compliance testing post-repair","Documentation"],
+        title: "Commercial Electrical Fault Finding & Repairs",
+        intro: [
+            "Unexpected electrical faults can disrupt your business, affect productivity and create safety risks. JBM Electrical Contractors provides fast, professional fault finding and repair services for commercial premises across Melbourne and regional country towns, helping businesses minimise downtime and restore safe, reliable operation."
+        ],
+        includes: [
+            "Electrical fault diagnosis and troubleshooting",
+            "Circuit testing and fault location",
+            "Switchboard inspections and testing",
+            "Circuit breaker and safety switch (RCD) testing",
+            "Power outage investigation and repairs",
+            "Lighting fault diagnosis and repairs",
+            "Power point and switch repairs",
+            "Replacement of faulty electrical components",
+            "Three-phase fault diagnosis",
+            "Preventative maintenance recommendations",
+            "Compliance testing following repairs",
+            "Detailed documentation and service reports"
+        ],
         related: ["shopping-centre-maintenance","medical-dental","bakeries-hospitality"]
     }
 };
