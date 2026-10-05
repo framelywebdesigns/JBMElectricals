@@ -109,6 +109,13 @@
             font-size: 16px; color: var(--text);
             line-height: 1.85; font-weight: 300; max-width: 720px;
         }
+        .sp-detail-intro + .sp-detail-intro { margin-top: 18px; }
+        .sp-detail-outro {
+            font-size: 16px; color: var(--text);
+            line-height: 1.85; font-weight: 300; max-width: 720px;
+            margin-top: 32px;
+        }
+        .sp-detail-outro + .sp-detail-outro { margin-top: 18px; }
         .sp-includes-wrap {
             background: var(--off-white);
             padding: 32px 36px; margin-top: 36px;
@@ -118,6 +125,7 @@
             font-size: 10px; font-weight: 600; letter-spacing: .2em;
             text-transform: uppercase; color: var(--amber); margin-bottom: 20px;
         }
+        .sp-includes-lead { font-size: 14.5px; line-height: 1.6; color: var(--text); margin: -6px 0 18px; }
         .sp-includes-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0 24px; }
         .sp-includes-item {
             display: flex; align-items: flex-start; gap: 12px;
@@ -395,33 +403,89 @@ window.JBM_SERVICES = {
         related: ["switchboard-upgrades","safety-switches","data-tv-points"]
     },
     "lighting-downlights": {
-        title: "Lighting & Downlights",
-        intro: "Good lighting makes a real difference in a home. JBM installs and replaces downlights, ceiling lights and switches throughout Melbourne.",
-        includes: ["LED downlight installation and replacement","Ceiling light fitting","Light switch installation and replacement","Dimmer switch installation","Outdoor and sensor lighting","Exhaust fan and light combo units"],
+        title: "Lighting & Downlight Installation",
+        intro: [
+            "From LED downlights and ceiling lights to chandeliers, feature lighting and outdoor lighting, we install lighting solutions to suit your home, lifestyle and budget."
+        ],
+        includes: [
+            "LED downlight supply and installation",
+            "Replacement of old halogen lights",
+            "Ceiling, pendant and feature lighting",
+            "Chandelier and decorative lighting",
+            "Dimmer and smart lighting installation",
+            "Kitchen, bathroom and living area lighting",
+            "Outdoor, security and sensor lighting",
+            "Garage, shed and workshop lighting",
+            "Fault finding and light fitting replacement",
+            "Energy-efficient lighting advice",
+            "Testing and certification to Australian Standards"
+        ],
         related: ["ceiling-exhaust-fans","smart-home-automation","electrical-heating"]
     },
     "ceiling-exhaust-fans": {
         title: "Ceiling & Exhaust Fans",
-        intro: "JBM installs ceiling fans and exhaust fans throughout Melbourne. Bedroom, kitchen, bathroom, laundry, it all gets done properly.",
-        includes: ["Ceiling fan installation","Exhaust fan installation","Bathroom and kitchen exhaust fans","Fan and light combo units","Replacement of existing fans","Wall controller installation"],
+        intro: [
+            "JBM Electrical supplies and installs a wide range of ceiling fans, exhaust fans, bathroom heater, fan and light combinations (IXL units) as well as rangehoods for kitchens."
+        ],
+        includes: [
+            "Bathroom exhaust fan (ducted & non ducted) installation",
+            "Bathroom Heat/Fan/Light Combo (IXL) Installation",
+            "Kitchen rangehood installation and replacement",
+            "Remote and Wall controlled Ceiling Fan installation",
+            "Wall Mount Fan installation"
+        ],
         related: ["air-conditioning","lighting-downlights","rangehood-installations"]
     },
     "stove-oven-cooktop": {
         title: "Stove, Oven & Cooktop Installations",
-        intro: "New appliance going in? JBM takes care of the electrical connection so it is done safely and to Australian Standards.",
-        includes: ["Freestanding stove electrical connection","Built-in oven connection","Induction cooktop installation","Dedicated circuit installation where needed","Disconnection and removal of old appliances"],
+        intro: [
+            "Whether you're replacing an old appliance or fitting out a new home, we ensure every electrical connection is completed safely, efficiently and in accordance with Australian Standards. We can also inspect your existing wiring and switchboard to ensure it is suitable for your new appliance."
+        ],
+        includes: [
+            "Installation and electrical connection of electric ovens",
+            "Cooktop installation (electric and induction)",
+            "Rangehood installation and connection",
+            "Dedicated circuits for high-demand appliances",
+            "Appliance disconnection and replacement",
+            "Circuit testing and safety checks",
+            "Switchboard upgrades where required",
+            "Testing, commissioning and compliance certification"
+        ],
+        outro: [
+            "If your new appliance requires additional wiring, a dedicated circuit or a switchboard upgrade, JBM can complete the entire job from start to finish, ensuring your installation is safe, reliable and fully compliant."
+        ],
         related: ["rangehood-installations","power-points-switches","appliance-repairs"]
     },
     "air-conditioning": {
         title: "Air Conditioning",
-        intro: "JBM handles the electrical side of air conditioning installations for split systems and ducted units across Melbourne.",
-        includes: ["Electrical connection for new AC units","Dedicated circuit installation","Power point for split system outdoor units","Compliance testing and certification","Upgrade of existing wiring where required"],
+        intro: [
+            "JBM Electrical provides professional installation of split system air conditioning units for a wide range of applications, including residential homes, bedrooms, offices, data rooms, and other commercial and industrial spaces."
+        ],
+        includes: [
+            "Electrical connection for new AC units",
+            "Dedicated circuit installations with Isolator",
+            "Power point for split system outdoor units",
+            "Replacement of existing aircon unit",
+            "Installations done on Single and Double storey houses/buildings",
+            "Upgrade switchboard to accommodate new air conditioning"
+        ],
         related: ["ceiling-exhaust-fans","electrical-heating","switchboard-upgrades"]
     },
     "rangehood-installations": {
-        title: "Rangehood Installations",
-        intro: "JBM connects rangehoods properly, whether it is a standard power point installation or a hardwired job.",
-        includes: ["Rangehood power point installation","Hardwired rangehood connection","Upgrade of existing wiring where needed","Testing and certification"],
+        title: "Rangehood Installation & Electrical Connection",
+        intro: [
+            "A properly installed rangehood improves ventilation, removes cooking odours and helps keep your kitchen fresh and clean. JBM Electrical Contractors provides professional rangehood installation and electrical connection services across Melbourne and regional country towns."
+        ],
+        includes: [
+            "Electrical connection of new rangehoods",
+            "Hardwired rangehood installations",
+            "Installation of new power points where required",
+            "Replacement of existing rangehoods",
+            "Electrical disconnection and reconnection during kitchen renovations",
+            "Dedicated electrical circuits where required",
+            "Wiring alterations for new kitchen layouts",
+            "Fault finding and repairs to existing rangehood circuits"
+        ],
         related: ["stove-oven-cooktop","power-points-switches","lighting-downlights"]
     },
     "smart-home-automation": {
@@ -431,9 +495,19 @@ window.JBM_SERVICES = {
         related: ["lighting-downlights","data-tv-points","power-points-switches"]
     },
     "electrical-heating": {
-        title: "Electrical Heating",
-        intro: "JBM installs electric panel heaters and heated flooring systems in homes across Melbourne.",
-        includes: ["Electric panel heater installation","In-slab and underfloor heating connections","Dedicated circuit installation","Timer and thermostat connection","Compliance testing"],
+        title: "Electrical Heating Installation",
+        intro: [
+            "Whether you're building, renovating or replacing existing heating, we provide safe, reliable electrical installations to suit your home and needs."
+        ],
+        includes: [
+            "Electric panel and wall-mounted heater installation",
+            "Heated towel rail connections",
+            "Dedicated circuits for heating systems",
+            "Replacement of faulty or outdated heaters",
+            "Electrical connections for heating appliances",
+            "Fault finding and repairs",
+            "Switchboard upgrades where required"
+        ],
         related: ["air-conditioning","safety-switches","switchboard-upgrades"]
     },
     "tv-wall-mounting": {
@@ -443,21 +517,63 @@ window.JBM_SERVICES = {
         related: ["data-tv-points","power-points-switches","smart-home-automation"]
     },
     "data-tv-points": {
-        title: "Data & TV Points",
-        intro: "Need a data point in the study or extra TV points around the house? JBM puts them where you need them.",
-        includes: ["Data point installation","TV antenna point installation","Additional room outlets","Cable runs and containment","Testing and certification"],
+        title: "Data & TV Point Installation",
+        intro: [
+            "Whether you're setting up a home office, creating a media room, improving your home network or simply relocating your television, JBM installs data and TV outlets exactly where you need them. We ensure all cabling is neatly concealed wherever possible, professionally terminated and fully tested for reliable performance."
+        ],
+        includes: [
+            "Data point installation",
+            "TV antenna point installation",
+            "Additional TV and data outlets for bedrooms, studies and living areas",
+            "Home office and workstation data points",
+            "NBN internal cabling and relocation",
+            "Network cable installation and cable management",
+            "Cable runs through walls, ceilings and roof spaces",
+            "Conduit and cable containment installation",
+            "Relocation of existing TV and data points",
+            "TV wall-mount cable concealment",
+            "Testing and certification of all data and TV cabling",
+            "Fault finding and repairs to existing data and TV outlets"
+        ],
         related: ["tv-wall-mounting","smart-home-automation","power-points-switches"]
     },
     "ev-charger": {
         title: "EV Charger Supply & Install",
-        intro: "JBM supplies and installs EV chargers for home use across Melbourne. The full job from supply through to certification.",
-        includes: ["EV charger supply","Dedicated circuit installation","Switchboard assessment and upgrade if needed","Weatherproof outdoor installation","Compliance certification"],
+        intro: [
+            "Whether you've purchased a new electric vehicle or are planning ahead, JBM Electrical can recommend the right charging solution to suit your home, vehicle and budget."
+        ],
+        lead: "We manage the entire process from start to finish, including:",
+        includes: [
+            "Supply of quality EV chargers from leading manufacturers",
+            "Professional installation by licensed A-Grade electricians",
+            "Switchboard inspections and upgrades where required",
+            "Dedicated circuit installation and safety protection",
+            "Load assessment and maximum demand calculations",
+            "Testing, commissioning and compliance certification",
+            "User setup and demonstration to ensure you get the most from your new charger"
+        ],
         related: ["switchboard-upgrades","power-points-switches","safety-switches"]
     },
     "switchboard-upgrades": {
-        title: "Switchboard Upgrades",
-        intro: "Old switchboards cause problems. JBM upgrades and replaces switchboards, installs safety switches, and handles underground cabling for homes across Melbourne.",
-        includes: ["Full switchboard replacement","Safety switch installation","Circuit breaker upgrades","1 and 3 phase distribution panels","Underground cabling installation","Capacity upgrades","Compliance certification"],
+        title: "Switchboard Upgrades & Underground Cabling",
+        intro: [
+            "Your switchboard is the heart of your home's electrical system. If it's outdated, overloaded or doesn't meet current safety standards, it can pose a serious safety risk and limit your ability to add new electrical appliances such as EV chargers, air conditioners or solar systems.",
+            "JBM Electrical Contractors provides professional switchboard upgrades, replacements and underground cabling services for homes across Melbourne and regional country towns."
+        ],
+        includes: [
+            "Complete switchboard replacement",
+            "Safety switch (RCD) installation and upgrades",
+            "Circuit breaker replacement and upgrades",
+            "Replacement of old ceramic fuses with modern protection",
+            "Single-phase and three-phase distribution board installation",
+            "Main switch upgrades",
+            "Underground consumer mains and underground cabling installation",
+            "Capacity upgrades for home extensions, renovations and new electrical loads",
+            "Switchboard upgrades for EV chargers, solar systems and battery storage",
+            "Fault finding and repairs to existing switchboards",
+            "Meter panel upgrades where required",
+            "Testing, commissioning and compliance certification"
+        ],
         related: ["safety-switches","ev-charger","electrical-heating"]
     },
     "safety-switches": {
@@ -467,15 +583,39 @@ window.JBM_SERVICES = {
         related: ["switchboard-upgrades","tenancy-safety-checks","ev-charger"]
     },
     "appliance-repairs": {
-        title: "Appliance Repairs",
-        intro: "Got an appliance giving trouble? JBM diagnoses and repairs electrical faults in household appliances.",
-        includes: ["Electrical fault finding","Appliance testing","Repair or replacement advice","Safe disconnection where needed"],
+        title: "Appliance Repairs & Electrical Fault Finding",
+        intro: [
+            "Whether your appliance has stopped working, is tripping the safety switch or isn't operating as it should, JBM can diagnose the electrical fault and recommend the most cost-effective solution. If a repair is practical, we'll complete it safely. If replacement is the better option, we'll provide honest advice to help you make the right decision."
+        ],
+        includes: [
+            "Electrical fault finding and diagnosis",
+            "Appliance testing and safety checks",
+            "Repairs to electrical faults in household appliances",
+            "Oven and cooktop fault diagnosis",
+            "Rangehood electrical repairs",
+            "Electric hot water system fault finding",
+            "Faulty switches, thermostats and heating elements",
+            "Power cord and plug replacement where permitted",
+            "Safe disconnection of faulty appliances",
+            "Repair or replacement recommendation"
+        ],
         related: ["stove-oven-cooktop","power-points-switches","safety-switches"]
     },
     "tenancy-safety-checks": {
         title: "Residential Tenancy Safety Checks",
-        intro: "JBM carries out electrical safety inspections for rental properties, helping landlords and property managers stay on top of their compliance obligations.",
-        includes: ["Full property electrical inspection","Safety switch testing","Smoke alarm compliance check","Written report and certification","Fault identification and recommendations"],
+        intro: [
+            "JBM Electrical provides professional electrical safety inspections for rental properties across Melbourne and regional Victoria, helping landlords and property managers keep properties safe and compliant."
+        ],
+        includes: [
+            "Electrical safety inspection",
+            "Safety switch (RCD) testing",
+            "Switchboard and wiring inspection",
+            "Power point, switch and lighting checks",
+            "Identification of damaged or non-compliant equipment",
+            "Fault finding and repair recommendations",
+            "Detailed inspection reports",
+            "Compliance documentation"
+        ],
         related: ["safety-switches","switchboard-upgrades","appliance-repairs"]
     }
 };
