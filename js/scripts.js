@@ -407,6 +407,7 @@ document.querySelectorAll(".fade-up").forEach(function(el) {
             paraHtml("sp-detail-intro", s.intro) +
             "<div class=\"sp-includes-wrap\">" +
             "<div class=\"sp-includes-label\">What\'s Included</div>" +
+            paraHtml("sp-includes-lead", s.lead) +
             "<div class=\"sp-includes-grid\">" + itemsHtml + "</div>" +
             "</div>" +
             paraHtml("sp-detail-outro", s.outro) +
