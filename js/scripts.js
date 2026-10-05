@@ -354,6 +354,12 @@ document.querySelectorAll(".fade-up").forEach(function(el) {
         }
     }
 
+    /* Intro and closing text can be one string or an array of paragraphs */
+    function paras(v) { return !v ? [] : (Array.isArray(v) ? v : [v]); }
+    function paraHtml(cls, v) {
+        return paras(v).map(function(t) { return "<p class=\"" + cls + "\">" + t + "</p>"; }).join("");
+    }
+
     function renderOverview() {
         setHero(true);
         var html = "<div class=\"sp-overview\">";
@@ -361,7 +367,7 @@ document.querySelectorAll(".fade-up").forEach(function(el) {
         html += "<div class=\"sp-overview-grid\">";
         Object.keys(JBM_SERVICES).forEach(function(id) {
             var s   = JBM_SERVICES[id];
-            var snip = s.intro.split(".")[0] + ".";
+            var snip = paras(s.intro)[0].split(".")[0] + ".";
             html += "<a href=\"#" + id + "\" class=\"sp-card\">";
             html += "<div class=\"sp-card-title\">" + s.title + "</div>";
             html += "<div class=\"sp-card-intro\">" + snip + "</div>";
@@ -398,11 +404,12 @@ document.querySelectorAll(".fade-up").forEach(function(el) {
             "<div class=\"sp-detail\">" +
             "<div class=\"sp-detail-eyebrow\">" + JBM_CATEGORY + "</div>" +
             "<h2 class=\"sp-detail-title\">" + s.title + "</h2>" +
-            "<p class=\"sp-detail-intro\">" + s.intro + "</p>" +
+            paraHtml("sp-detail-intro", s.intro) +
             "<div class=\"sp-includes-wrap\">" +
             "<div class=\"sp-includes-label\">What\'s Included</div>" +
             "<div class=\"sp-includes-grid\">" + itemsHtml + "</div>" +
             "</div>" +
+            paraHtml("sp-detail-outro", s.outro) +
             relHtml +
             "</div>";
 
