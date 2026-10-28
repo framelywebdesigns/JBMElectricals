@@ -125,6 +125,24 @@
             font-size: 10px; font-weight: 600; letter-spacing: .2em;
             text-transform: uppercase; color: var(--amber); margin-bottom: 20px;
         }
+        /* Optional service photo: text left, sticky photo right (desktop) */
+        .sp-detail-grid { display: grid; grid-template-columns: minmax(0,1fr) 400px; gap: 56px; align-items: start; }
+        .sp-detail-grid .sp-includes-wrap { max-width: none; }
+        .sp-detail-media { position: sticky; top: 110px; margin: 0; }
+        .sp-detail-media::before {
+            content: ""; position: absolute; top: 16px; left: -16px; width: 100%; height: 100%;
+            border: 2px solid var(--amber); opacity: .25; z-index: 0;
+        }
+        .sp-detail-media img {
+            position: relative; z-index: 1; display: block; width: 100%; height: auto;
+            aspect-ratio: var(--ratio, 1 / 1); object-fit: cover;
+        }
+        @media (max-width: 1100px) {
+            .sp-detail-grid { grid-template-columns: 1fr; gap: 32px; }
+            .sp-detail-media { position: static; order: -1; }
+            .sp-detail-media::before { display: none; }
+            .sp-detail-media img { aspect-ratio: 3 / 2; }
+        }
         .sp-includes-lead { font-size: 14.5px; line-height: 1.6; color: var(--text); margin: -6px 0 18px; }
         .sp-includes-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0 24px; }
         .sp-includes-item {
@@ -398,12 +416,14 @@ window.JBM_CATEGORY = "Domestic";
 window.JBM_CATEGORY_INTRO = "JBM handles residential electrical work across Melbourne. From small repairs and single installations through to full switchboard upgrades, here is what we cover.";
 window.JBM_SERVICES = {
     "power-points-switches": {
+        image: { src: "assets/images/svc-power-points.avif", alt: "A JBM electrician wiring a wall power point", pos: "75% 40%" },
         title: "Power Points & Switches",
         intro: "Whether you need an extra power point in the kitchen, a replacement for a worn-out outlet, or a faulty switch sorted out, JBM handles it properly and to code.",
         includes: ["New power point installation","Replacement of damaged or faulty outlets","Outdoor and weatherproof power points","USB power points","Double and multi power point upgrades","Safety switch protected circuits"],
         related: ["switchboard-upgrades","safety-switches","data-tv-points"]
     },
     "lighting-downlights": {
+        image: { src: "assets/images/svc-lighting.avif", alt: "A JBM electrician installing a ceiling light", pos: "35% 40%" },
         title: "Lighting & Downlight Installation",
         intro: [
             "From LED downlights and ceiling lights to chandeliers, feature lighting and outdoor lighting, we install lighting solutions to suit your home, lifestyle and budget."
@@ -458,6 +478,7 @@ window.JBM_SERVICES = {
         related: ["rangehood-installations","power-points-switches","appliance-repairs"]
     },
     "air-conditioning": {
+        image: { src: "assets/images/svc-air-conditioning.avif", alt: "A JBM electrician installing a split system air conditioner", pos: "100% 40%", ratio: "4 / 3" },
         title: "Air Conditioning",
         intro: [
             "JBM Electrical provides professional installation of split system air conditioning units for a wide range of applications, including residential homes, bedrooms, offices, data rooms, and other commercial and industrial spaces."
@@ -512,6 +533,7 @@ window.JBM_SERVICES = {
         related: ["air-conditioning","safety-switches","switchboard-upgrades"]
     },
     "tv-wall-mounting": {
+        image: { src: "assets/images/svc-tv-mounting.avif", alt: "Two JBM electricians mounting a TV on a wall", pos: "50% 40%", ratio: "4 / 3" },
         title: "TV & Wall Mounting",
         intro: [
             "JBM Electrical provides professional TV wall mounting services, including secure installation of televisions and in-wall cable management to conceal power and audio-visual cabling for a clean, modern finish."
@@ -566,6 +588,7 @@ window.JBM_SERVICES = {
         related: ["switchboard-upgrades","power-points-switches","safety-switches"]
     },
     "switchboard-upgrades": {
+        image: { src: "assets/images/svc-switchboard.avif", alt: "A JBM electrician working inside a switchboard", pos: "70% 40%" },
         title: "Switchboard Upgrades & Underground Cabling",
         intro: [
             "Your switchboard is the heart of your home's electrical system. If it's outdated, overloaded or doesn't meet current safety standards, it can pose a serious safety risk and limit your ability to add new electrical appliances such as EV chargers, air conditioners or solar systems.",
