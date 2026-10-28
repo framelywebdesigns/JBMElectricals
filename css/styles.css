@@ -183,12 +183,12 @@
         .hero-bg {
             position:absolute; inset:0;
             background-color:var(--navy-deep);
-            background-image:url("../assets/images/hero-bg.png");
+            background-image:url("../assets/images/hero-shed.avif");
             background-size:cover; background-position:60% center;
         }
         .hero-overlay {
             position:absolute; inset:0;
-            background:linear-gradient(180deg, rgba(0,85,140,.45) 0%, rgba(0,85,140,.65) 55%, rgba(0,85,140,.82) 100%);
+            background:linear-gradient(180deg, rgba(0,85,140,.58) 0%, rgba(0,85,140,.72) 55%, rgba(0,85,140,.86) 100%);
         }
         .hero-grain {
             position:absolute; inset:0; opacity:.035;
@@ -1005,6 +1005,8 @@
             .hero-eyebrow::before, .hero-eyebrow::after { width:20px; }
             .hero-ribbon-inner { padding:0 16px; }
             #hero { min-height:100svh; }
+            /* Mobile crop: shift left so the blue switchgear stays in frame */
+            .hero-bg { background-position:27% center; }
             /* Ribbon stays 3-col on mobile — compact */
             .hero-ribbon-inner { grid-template-columns:repeat(3,1fr); }
             .h-stat { padding:12px 8px; border-right:1px solid rgba(255,255,255,.07); border-bottom:none; }
