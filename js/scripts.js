@@ -400,8 +400,8 @@ document.querySelectorAll(".fade-up").forEach(function(el) {
             relHtml += "</div></div>";
         }
 
-        contentEl.innerHTML =
-            "<div class=\"sp-detail\">" +
+        // Main copy block (same markup with or without a photo)
+        var textHtml =
             "<div class=\"sp-detail-eyebrow\">" + JBM_CATEGORY + "</div>" +
             "<h2 class=\"sp-detail-title\">" + s.title + "</h2>" +
             paraHtml("sp-detail-intro", s.intro) +
@@ -410,9 +410,25 @@ document.querySelectorAll(".fade-up").forEach(function(el) {
             paraHtml("sp-includes-lead", s.lead) +
             "<div class=\"sp-includes-grid\">" + itemsHtml + "</div>" +
             "</div>" +
-            paraHtml("sp-detail-outro", s.outro) +
-            relHtml +
-            "</div>";
+            paraHtml("sp-detail-outro", s.outro);
+
+        // Optional photo: services with an image get a two-column layout.
+        // Services without one render exactly as before.
+        var bodyHtml;
+        if (s.image && s.image.src) {
+            bodyHtml =
+                "<div class=\"sp-detail-grid\">" +
+                "<div class=\"sp-detail-text\">" + textHtml + "</div>" +
+                "<figure class=\"sp-detail-media\">" +
+                "<img src=\"" + s.image.src + "\" alt=\"" + (s.image.alt || "") + "\"" +
+                " style=\"" + (s.image.ratio ? "--ratio:" + s.image.ratio + ";" : "") + (s.image.pos ? "object-position:" + s.image.pos + ";" : "") + "\">" +
+                "</figure></div>";
+        } else {
+            bodyHtml = textHtml;
+        }
+
+        contentEl.innerHTML =
+            "<div class=\"sp-detail\">" + bodyHtml + relHtml + "</div>";
 
         window.scrollTo({ top: 0, behavior: "smooth" });
     }
