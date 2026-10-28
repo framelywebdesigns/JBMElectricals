@@ -343,6 +343,22 @@
         #why { padding:70px 0; background:var(--white); position:relative; overflow-x:clip; }
         .why-grid { display:grid; grid-template-columns:1fr 1fr; gap:60px; align-items:center; }
         .why-left { position:relative; }
+        /* Team photo band under the Why JBM columns */
+        .why-team { margin:64px 0 0; }
+        .why-team-frame { position:relative; }
+        .why-team-frame::before {
+            content:""; position:absolute; top:16px; left:-16px; width:100%; height:100%;
+            border:2px solid var(--amber); opacity:.25; z-index:0;
+        }
+        .why-team-img {
+            position:relative; z-index:1; display:block; width:100%; height:auto;
+            aspect-ratio:21/9; object-fit:cover; object-position:center 42%;
+        }
+        .why-team-cap {
+            margin-top:20px; padding-top:14px; border-top:1px solid var(--light-gray);
+            font-family:"DM Sans",sans-serif; font-size:10.5px; font-weight:500;
+            letter-spacing:.25em; text-transform:uppercase; color:var(--navy);
+        }
         .why-sec-sub { font-size:15px; color:var(--text); line-height:1.75; font-weight:300; margin-bottom:0; margin-top:14px; }
 
         .cred-grid { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:28px; }
@@ -925,6 +941,9 @@
 
             /* Why section */
             .why-grid { grid-template-columns:1fr; gap:48px; }
+            .why-team { margin-top:48px; }
+            .why-team-img { aspect-ratio:3/2; }
+            .why-team-frame::before { top:12px; left:-8px; }
             .why-left { position:static; }
 
             /* Process section */
