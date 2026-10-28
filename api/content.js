@@ -8,8 +8,13 @@ export default async function handler(req, res) {
         return;
     }
 
-    const repo   = "framelywebdesigns/JBMElectricals";
-    const branch = "main";
+    // Read from the branch this deployment was built from, so a staging
+    // preview lists the staged files. Vercel sets these variables on every
+    // build; production (main) and any missing value fall back to the defaults.
+    const owner  = process.env.VERCEL_GIT_REPO_OWNER || "framelywebdesigns";
+    const slug   = process.env.VERCEL_GIT_REPO_SLUG  || "JBMElectricals";
+    const repo   = `${owner}/${slug}`;
+    const branch = process.env.VERCEL_GIT_COMMIT_REF || "main";
     const path   = `content/${type}`;
     const url    = `https://api.github.com/repos/${repo}/contents/${path}?ref=${branch}`;
 
